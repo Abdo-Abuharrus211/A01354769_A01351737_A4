@@ -1,0 +1,3 @@
+"""
+Asset creation module
+"""
