@@ -14,6 +14,5 @@ AA: A01351737
 katesully
 
 Abdo-Abuharrus211
-
 ## Comments & Declarations:
 We're going to make a game to rule all games!
