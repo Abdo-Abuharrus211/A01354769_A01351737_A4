@@ -3,9 +3,6 @@ Abdo & Kate make a game for A4
 """
 
 
-
-
-
 def game():
     """
     Initiate the game loop and don't end it until Victory or Game Over.

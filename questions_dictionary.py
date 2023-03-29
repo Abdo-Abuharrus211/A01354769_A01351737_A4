@@ -60,5 +60,15 @@ questions_level_3 = {"What is NOT presented as true in Breathe by James Nestor"
                      "In 'Wind up Bird Chronicle', the place the protagonist goes into a different world from is:"
                      "\n 1: The ocean \n 2: Under a waterfall  \n 3: A well \n 4: In the basement of his house "
                      "\n 5: In bed, dreaming": 3
-
                      }
+
+
+def main():
+    """
+    Drive the program.
+    """
+    pass
+
+
+if __name__ == "__main__":
+    main()

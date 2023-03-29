@@ -56,3 +56,14 @@ def check_victory(board, character):
         return True
     else:
         return False
+
+
+def main():
+    """
+    Drive the program.
+    """
+    pass
+
+
+if __name__ == "__main__":
+    main()

@@ -21,3 +21,14 @@ def move_character(character: dict, direction: str):
         character["X-coordinate"] += 1
     elif direction == "W":
         character["X-coordinate"] -= 1
+
+
+def main():
+    """
+    Drive the program.
+    """
+    pass
+
+
+if __name__ == "__main__":
+    main()

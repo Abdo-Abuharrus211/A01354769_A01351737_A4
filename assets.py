@@ -53,8 +53,6 @@ def main():
     Drives the program
     """
 
-    game()
-
 
 if __name__ == "__main__":
     main()

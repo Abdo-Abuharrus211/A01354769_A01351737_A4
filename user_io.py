@@ -60,3 +60,14 @@ def duelling_game(character: dict):
     else:
         print("That wasn't a number you dolt! Now we must fight the troll.\n")
         character["Current HP"] -= 1
+
+
+def main():
+    """
+    Drive the program.
+    """
+    pass
+
+
+if __name__ == "__main__":
+    main()
