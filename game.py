@@ -1,11 +1,15 @@
 """
 Abdo & Kate make a game for A4
 """
+from assets import make_board, make_character
 
-# import assets
-# import game_mechanics
-# import game_state_control
-# import questions_dictionary
+
+import assets
+import game_mechanics
+import game_state_control
+import questions_dictionary
+import dialog
+from user_io import get_user_choice
 
 
 def game():
@@ -19,9 +23,9 @@ def game():
     direction = ""
     achieved_goal = False
 
-    print(WELCOME_MESSAGE)
+    print(dialog.WELCOME_MESSAGE)
     while not achieved_goal:
-        describe_current_location(board, character)
+        game_mechanics.describe_current_location(board, character)
         print(f"\nWe're currently at({character['X-coordinate']},{character['Y-coordinate']})")
 
         try:

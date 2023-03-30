@@ -18,6 +18,19 @@ def make_description() -> str:
     return room_descriptions[random.randint(0, len(room_descriptions) - 1)]
 
 
+def make_enemy() -> str:
+    """
+    Generate random description for enemies.
+
+    :postcondition: generate random integer to index through a list and obtain an enemy description
+    :return: a random string from the collection of strings
+    """
+    # TODO: Add more enemy descriptions ~ 20
+    enemy_descriptions = ("Look out, it's a warrior ant with ill intentions!",
+                          "The Snail of Orwell demands a duel!")
+    return enemy_descriptions[random.randint(0, len(enemy_descriptions) - 1)]
+
+
 def make_board(rows: int, columns: int) -> dict:
     """
     Create the game space.
@@ -36,13 +49,6 @@ def make_board(rows: int, columns: int) -> dict:
         raise ValueError("Rows and columns must both be 10")
 
     else:
-        # list_rows = list(range(0, rows))
-        # list_columns = list(range(0, columns))
-        # board = {}
-        # for row_item in list_rows:
-        #     for column_item in list_columns:
-        #         board[row_item, column_item] = random.randint(1, 9)
-        # return board
         game_board = {(row, column): make_description() for row in range(rows) for column in range(columns)}
         return game_board
 
@@ -58,8 +64,7 @@ def make_character() -> dict:
     >>> make_character()
     {"X-coordinate": 0, "Y-coordinate": 0, "Current HP": 7, "Current XP": 0, "Knowledge": 1}
     """
-
-    player = {"X-coordinate": 0, "Y-coordinate": 0, "Current HP": 7, "Current XP": 0, "Knowledge": 1}
+    player = {"X-coordinate": 0, "Y-coordinate": 0, "Current HP": 7, "Current XP": 0, "Knowledge": " "}
     return player
 
 

@@ -22,13 +22,13 @@ def get_user_choice() -> str:
 
         if player_movement == "" or player_movement not in accepted_directions:
             player_movement = input(
-                "Which way would you like to go?\nRemember, the enchanted Koviri compass only accepts:\n"
+                "Which way would you like to go?\nRemember, your map scroll only accepts:\n"
                 " 'N' for North\n 'E' for East\n 'S' for South\n 'W' for West\n ").upper()
             if player_movement in accepted_directions:
                 need_direction = False
                 print(f"Heading {directions_dict[player_movement]}, off we go!")
             else:
-                raise ValueError("\nThat's not a compass bearing you dimwit!\nWe need a direction.")
+                raise ValueError("\nWe mustn't wander astray!\nWe need to head on a direction that's on our path.")
     return player_movement
 
 

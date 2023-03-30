@@ -1,6 +1,7 @@
 """
     This module is for functions controlling and checking the game's and other crucial control statements.
 """
+import random
 
 
 def validate_move(board: dict, character: dict, direction: str) -> bool:
@@ -30,7 +31,6 @@ def validate_move(board: dict, character: dict, direction: str) -> bool:
      >>> validate_move(board_three, character_three, direction_three)
      True
      """
-
     if direction == "N" and 0 <= character["Y-coordinate"] - 1:
         valid_move = True
     elif direction == "S" and character["Y-coordinate"] + 1 <= max(board)[1]:
@@ -40,9 +40,7 @@ def validate_move(board: dict, character: dict, direction: str) -> bool:
     elif direction == "W" and 0 <= character["X-coordinate"] - 1:
         valid_move = True
     else:
-        raise KeyError("We mustn't enter Brokilon, Brave One. The Dryads will shoot us from 3 fathoms away,"
-                       "let's turn back.")
-
+        raise KeyError("You mustn't leave the bookshop, little one. You're too vulnerable at the moment")
     return valid_move
 
 
@@ -53,9 +51,7 @@ def check_for_foes() -> bool:
     :postcondition: generates random integer in a specific range then check if it's equal or greater than 25%
     :return: True if there's a 25% or more chance of facing a foe, return False otherwise
     """
-
-    # TODO: should rework this, 25% seems a bit high no?
-    return random.randint(1, 4) == 1
+    return random.randint(1, 10) <= 2
 
 
 def dead_yet(character):
