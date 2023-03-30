@@ -75,34 +75,34 @@ def dead_yet(character):
     return character["Current HP"] == 0
 
 
-def check_victory(board, character):
-    """
-    Determine if the player is victorious and has reached the end point (bottom right corner) alive
-
-    :param board: dictionary representing the game board's rooms, with (x,y) coordinates as keys and string values.
-    :param character: dictionary representing player's character stats, current location and HP
-    :precondition: board is valid dictionray containing board's specifications and character is valid dictionary
-                    containing character's stats
-    :postcondition: accurately determines if player is at the end point's coordinates
-    :return: True if the player completes the game, return False otherwise
-    >>> board_one = {(0, 0): "Potato", (0,1): "Pie", (1, 0): "Cheese", (1,1): "Burger"}
-     >>> character_one = {"X-coordinate": 0, "Y-coordinate": 0, "Current HP": 5}
-     >>> check_victory(board_one, character_one)
-     False
-     >>> board_one = {(0, 0): "Potato", (0,1): "Pie", (1, 0): "Cheese", (1,1): "Burger"}
-     >>> character_one = {"X-coordinate": 1, "Y-coordinate": 0, "Current HP": 2}
-     >>> check_victory(board_one, character_one)
-     False
-     >>> board_one = {(0, 0): "Potato", (0,1): "Pie", (1, 0): "Cheese", (1,1): "Burger"}
-     >>> character_one = {"X-coordinate": 1, "Y-coordinate": 1, "Current HP": 0}
-     >>> check_victory(board_one, character_one)
-     True
-     """
-    # TODO: Need to redefine what victory is and how we check for it.
-    if character["X-coordinate"] == max(board)[0] and character["Y-coordinate"] == max(board)[1]:
-        return True
-    else:
-        return False
+# def check_victory(board, character):
+#     """
+#     Determine if the player is victorious and has reached the end point (bottom right corner) alive
+#
+#     :param board: dictionary representing the game board's rooms, with (x,y) coordinates as keys and string values.
+#     :param character: dictionary representing player's character stats, current location and HP
+#     :precondition: board is valid dictionray containing board's specifications and character is valid dictionary
+#                     containing character's stats
+#     :postcondition: accurately determines if player is at the end point's coordinates
+#     :return: True if the player completes the game, return False otherwise
+#     >>> board_one = {(0, 0): "Potato", (0,1): "Pie", (1, 0): "Cheese", (1,1): "Burger"}
+#      >>> character_one = {"X-coordinate": 0, "Y-coordinate": 0, "Current HP": 5}
+#      >>> check_victory(board_one, character_one)
+#      False
+#      >>> board_one = {(0, 0): "Potato", (0,1): "Pie", (1, 0): "Cheese", (1,1): "Burger"}
+#      >>> character_one = {"X-coordinate": 1, "Y-coordinate": 0, "Current HP": 2}
+#      >>> check_victory(board_one, character_one)
+#      False
+#      >>> board_one = {(0, 0): "Potato", (0,1): "Pie", (1, 0): "Cheese", (1,1): "Burger"}
+#      >>> character_one = {"X-coordinate": 1, "Y-coordinate": 1, "Current HP": 0}
+#      >>> check_victory(board_one, character_one)
+#      True
+#      """
+#     # TODO: Need to redefine what victory is and how we check for it.
+#     if character["X-coordinate"] == max(board)[0] and character["Y-coordinate"] == max(board)[1]:
+#         return True
+#     else:
+#         return False
 
 
 def level_up(character):
