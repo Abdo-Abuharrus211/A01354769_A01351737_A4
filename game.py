@@ -7,7 +7,6 @@ from assets import make_board, make_character
 import assets
 import game_mechanics
 import game_state_control
-import questions_dictionary
 import dialog
 from user_io import get_user_choice
 

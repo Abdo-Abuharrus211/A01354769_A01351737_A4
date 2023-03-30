@@ -40,13 +40,14 @@ def validate_move(board: dict, character: dict, direction: str) -> bool:
     elif direction == "W" and 0 <= character["X-coordinate"] - 1:
         valid_move = True
     else:
-        raise KeyError("You mustn't leave the bookshop, little one. You're too vulnerable at the moment")
+        raise KeyError("You mustn't leave the bookshop, little one. You're too vulnerable to venture beyond the "
+                       "territory of books.")
     return valid_move
 
 
 def check_for_foes() -> bool:
     """
-    Determine if there's a 25% chance to face and fight a foe to fight by generating a random integer.
+    Determine if there's a 20% chance to face and fight a foe to fight by generating a random integer.
 
     :postcondition: generates random integer in a specific range then check if it's equal or greater than 25%
     :return: True if there's a 25% or more chance of facing a foe, return False otherwise
