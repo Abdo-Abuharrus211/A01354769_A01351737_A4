@@ -54,11 +54,12 @@ def guessing_game(character: dict):
     """
 
     # TODO: Kate's question guessing game, troubleshoot and fix together consulting Chris
-    player_level = character["Level"]
-    current_dictionary = (f"questions_level_{player_level:.0f}").format(player_level)
+    # Once matter is resolved, then can work together on this. Refer to the flowchart and game diagram
+    player_level = character["Knowledge"]
+    current_dictionary = (f"questions_level_{player_level:.0f}").format(player_level)  # What's this doing?
     question = random.choice(list(current_dictionary.items()))
     try:
-        answer = int(input("Please input your answer as a number"))
+        answer = int(input("Pick a number little one"))
     except ValueError:
         print("Please pick a number between 1 and 5 inclusive, you lost 1 HP")
         character["Current HP"] -= 1
