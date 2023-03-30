@@ -1,3 +1,51 @@
+"""
+    This module is for functions controlling and checking the game's and other crucial control statements.
+"""
+
+
+def validate_move(board: dict, character: dict, direction: str) -> bool:
+    """
+    Determine if moving in given direction is permitted and within the board's bounds.
+
+    :param board: dictionary representing the game board's rooms, with (x,y) coordinates as keys and string values.
+    :param character: dictionary representing player's character stats, current location and HP
+    :param direction: a string specifying which direction the player wants to move towards
+    :precondition: character and direction are not None type and direction is a non-empty string
+    :postcondition: Correctly checks if direction is valid and if the move keeps player within bounds
+    :return: True if moving in player's desired direction is still within bounds, return False otherwise
+    :raises KeyError: if moving in a direction leads out of bounds
+     >>> board_one = {(0, 0): "Potato", (0,1): "Pie", (1, 0): "Cheese", (1,1): "Burger"}
+     >>> character_one = {"X-coordinate": 0, "Y-coordinate": 0, "Current HP": 5}
+     >>> direction_one = "S"
+     >>> validate_move(board_one, character_one, direction_one)
+     True
+     >>> board_two = {(0, 0): "Potato", (1,0): "Pie"}
+     >>> character_two = {"X-coordinate": 0 , "Y-coordinate": 0, "Current HP": 5}
+     >>> direction_two = "E"
+     >>> validate_move(board_two, character_two, direction_two)
+     True
+     >>> board_three = {(0, 0): "Potato", (0,1): "Pie", (1, 0): "Cheese", (1,1): "Burger"}
+     >>> character_three = {"X-coordinate": 1 , "Y-coordinate": 1, "Current HP": 5}
+     >>> direction_three = "N"
+     >>> validate_move(board_three, character_three, direction_three)
+     True
+     """
+
+    if direction == "N" and 0 <= character["Y-coordinate"] - 1:
+        valid_move = True
+    elif direction == "S" and character["Y-coordinate"] + 1 <= max(board)[1]:
+        valid_move = True
+    elif direction == "E" and character["X-coordinate"] + 1 <= max(board)[0]:
+        valid_move = True
+    elif direction == "W" and 0 <= character["X-coordinate"] - 1:
+        valid_move = True
+    else:
+        raise KeyError("We mustn't enter Brokilon, Brave One. The Dryads will shoot us from 3 fathoms away,"
+                       "let's turn back.")
+
+    return valid_move
+
+
 def check_for_foes() -> bool:
     """
     Determine if there's a 25% chance to face and fight a foe to fight by generating a random integer.
@@ -5,7 +53,9 @@ def check_for_foes() -> bool:
     :postcondition: generates random integer in a specific range then check if it's equal or greater than 25%
     :return: True if there's a 25% or more chance of facing a foe, return False otherwise
     """
-    return random.randint(1, 20) >= 5
+
+    # TODO: should rework this, 25% seems a bit high no?
+    return random.randint(1, 4) == 1
 
 
 def dead_yet(character):
@@ -52,6 +102,7 @@ def check_victory(board, character):
      >>> check_victory(board_one, character_one)
      True
      """
+    # TODO: Need to redefine what victory is and how we check for it.
     if character["X-coordinate"] == max(board)[0] and character["Y-coordinate"] == max(board)[1]:
         return True
     else:
@@ -59,11 +110,10 @@ def check_victory(board, character):
 
 
 def level_up(character):
-
     """
-    Increase character knowledge level.
+    Increase the character's knowledge level if they reach the level up threshold.
 
-    This function increases the character knowledge level based on experience points
+    a function that increases the character knowledge level based on experience points
 
     :param character: dictionary representing player's character stats, current location,current HP,
                         current XP and Knowledge
@@ -71,16 +121,16 @@ def level_up(character):
                              containing string keys X-coordinate, Y-coordinate, current HP, current XP and Knowledge
     :postcondition: update Knowledge if appropriate based on current XP
     """
-
+    # TODO: should we just increment the knowledge level instead?
+    # as in every 100XP earned Knowledge level is bumped up.
+    # Also, how about instead of level 1, 2, 3 we can have "Novice", "Bookworm", and "Master Custodian" ?
     if 100 <= character["Current XP"] < 200:
         character["Knowledge"] = 2
     elif 200 <= character["Current XP"] < 300:
         character["Knowledge"] = 3
 
 
-
 def main():
-
     """
     Drive the program.
     """

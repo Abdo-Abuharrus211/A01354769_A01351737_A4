@@ -1,8 +1,6 @@
 import random
 
 def describe_current_location(board: dict, character: dict, rows: int, columns: int) -> None:
-
-
     """
     Describes character location.
 
@@ -199,6 +197,7 @@ def guessing_game(character: dict):
     :postcondition: update to character dictionary if appropriate
     """
 
+    # TODO: Kate's guessing game, troubleshoot and fix together
     player_level = character["Level"]
     current_dictionary = (f"questions_level_{player_level:.0f}").format(player_level)
     question = random.choice(list(current_dictionary.items()))
@@ -238,7 +237,7 @@ def is_alive(character: dict) -> bool:
     False
 
     """
-
+    # TODO: Can scrap this? I think mine is simpler.
     if character["Current HP"] != 0:
         return True
     else:

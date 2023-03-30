@@ -4,7 +4,7 @@ questions_level_1 = {"Shantaram (by Australian escaped criminal Gregory David Ro
                      "\n 1: Red\n 2: Green\n 3: Yellow \n 4: Purple \n 5: Blue": 4,
                      "What is the answer to the meaning of life according to Hitchhikers Guide to the Galaxy? "
                      "\n 1: 100\n 2: 420\n 3: 42 \n 4: 1 \n 5: Infinity": 3,
-                     "Which of the follwing is not a book by Malcolm Gladwell:"
+                     "Which of the following is not a book by Malcolm Gladwell:"
                      "\n 1: Outwitting the Devil \n: The Tipping Point \n: Outliers \n: Talking to Strangers \n: "
                      "Blink": 1,
                      "Which book is the shortest? "
