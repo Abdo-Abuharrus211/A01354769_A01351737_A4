@@ -45,7 +45,6 @@ def make_board(rows: int, columns: int) -> dict:
     """
     if rows != 10 or columns != 10:
         raise ValueError("Rows and columns must both be 10")
-
     else:
         game_board = {(row, column): make_description() for row in range(rows) for column in range(columns)}
         return game_board
@@ -61,7 +60,7 @@ def make_character() -> dict:
     >>> make_character()
     {"X-coordinate": 0, "Y-coordinate": 0, "Current HP": 7, "Current XP": 0, "Knowledge": 1}
     """
-    player = {"X-coordinate": 0, "Y-coordinate": 0, "Current HP": 7, "Current XP": 0, "Knowledge": " "}
+    player = {"X-coordinate": 0, "Y-coordinate": 0, "Current HP": 7, "Current XP": 0, "Knowledge": 0}
     return player
 
 
