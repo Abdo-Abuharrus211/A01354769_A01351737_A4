@@ -58,7 +58,6 @@ def make_character() -> dict:
     :precondition: values for X-coordinate, Y-coordinate and Current HP must be integers
     :postcondition: creates dictionary with character attributes
     :return: dictionary with character attributes
-
     >>> make_character()
     {"X-coordinate": 0, "Y-coordinate": 0, "Current HP": 7, "Current XP": 0, "Knowledge": 1}
     """

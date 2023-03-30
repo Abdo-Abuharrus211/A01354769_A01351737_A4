@@ -148,21 +148,6 @@ def check_if_goal_attained(rows: int, columns: int, character: dict) -> bool:
     else:
         return False
 
-
-def check_for_foes() -> bool:
-    """
-    Determine if the player encounters a foe
-
-    :postcondition:  returns True 25% of the time, False otherwise
-    :return: True if foe is encountered, else False
-    """
-    is_there_foe = random.randint(1, 4)
-    if is_there_foe == 1:
-        return True
-    else:
-        return False
-
-
 def guessing_game(character: dict):
     """
     Play a guessing game
@@ -177,7 +162,7 @@ def guessing_game(character: dict):
     :postcondition: update to character dictionary if appropriate
     """
 
-    # TODO: Kate's guessing game, troubleshoot and fix together
+    # TODO: Kate's question guessing game, troubleshoot and fix together consulting Chris
     player_level = character["Level"]
     current_dictionary = (f"questions_level_{player_level:.0f}").format(player_level)
     question = random.choice(list(current_dictionary.items()))
@@ -195,32 +180,6 @@ def guessing_game(character: dict):
         elif guess != secret_number:
             print("Incorrect, 1 hit taken")
             character["Current HP"] -= 1
-
-
-# def is_alive(character: dict) -> bool:
-#     """
-#     Determine if character is "alive"
-#
-#     Determines if the character is alive by checking if the HP points are > 0
-#
-#     :param character: dictionary of character attributes containing string keys X-coordinate, Y-coordinate and
-#                     current HP with integer values
-#     :precondition character: must be a dictionary of character attributes
-#                     containing string keys X-coordinate, Y-coordinate and current HP
-#     :precondition character: all dictionary values must be integers
-#     :postcondition: return appropraite boolean value
-#     :return: True if character is dead, False otherwise
-#
-#     >>> is_alive({"X-coordinate": 0, "Y-coordinate": 0, "Current HP": 4})
-#     True
-#     >>> is_alive({"X-coordinate": 1, "Y-coordinate": 1, "Current HP": 0})
-#     False
-#
-#     """
-#     if character["Current HP"] != 0:
-#         return True
-#     else:
-#         return False
 
 
 def main():

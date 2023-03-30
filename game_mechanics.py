@@ -46,7 +46,6 @@ def move_character(character: dict, direction: str):
      >>> print(character_one["Y-coordinate"])
      1
     """
-
     if direction == "N":
         character["Y-coordinate"] -= 1
     elif direction == "S":

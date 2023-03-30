@@ -8,4 +8,4 @@ WELCOME_MESSAGE = """ Oh, you're awake. Don't be alarmed little one. I know this
                     here in the AlphaNuma territories.\n The humans call it Bob's bookshop, and I'm the Mothrandir,
                     I'll guide you through this labyrinth of tomes and scrolls."""
 
-ENEMY_ENCOUNTER =
+ENEMY_ENCOUNTER = ""
