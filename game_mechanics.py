@@ -1,3 +1,37 @@
+"""
+    This module is for functions that comprise the game's core elements and mechanics.
+"""
+
+
+def describe_current_location(board: dict, character: dict):
+    """
+    Describe the room the player is currently in.
+
+    :param board: dictionary representing the game board's rooms, with (x,y) coordinates as keys and string values.
+    :param character: dictionary representing player's character stats, current location and HP
+    :precondition: board and character are dictionaries and not None types
+    :postcondition: obtains player's current location to acquire room's description from board and prints it
+    >>> board_one = {(0, 0): "Potato", (0,1): "Pie", (1, 0): "Cheese", (1,1): "Burger"}
+    >>> character_one = {"X-coordinate": 1, "Y-coordinate": 1, "Current HP": 5}
+    >>> describe_current_location(board_one, character_one)
+    Burger
+    >>> board_one = {(0, 0): "Potato", (0,1): "Pie"}
+    >>> character_one = {"X-coordinate": 0 , "Y-coordinate": 0, "Current HP": 5}
+    >>> describe_current_location(board_one, character_one)
+    Potato
+    >>> board_one = {(0, 0): "Lexus LFA"}
+    >>> character_one = {"X-coordinate": 0, "Y-coordinate": 0, "Current HP": 5}
+    >>> describe_current_location(board_one, character_one)
+    Lexus LFA
+    """
+    try:
+        description = board[(character["X-coordinate"], character["Y-coordinate"])]
+    except KeyError as e:
+        print(e)
+    else:
+        print(description)
+
+
 def move_character(character: dict, direction: str):
     """
     Update character's current location on the board.

@@ -2,6 +2,11 @@
 Abdo & Kate make a game for A4
 """
 
+# import assets
+# import game_mechanics
+# import game_state_control
+# import questions_dictionary
+
 
 def game():
     """
@@ -14,9 +19,7 @@ def game():
     direction = ""
     achieved_goal = False
 
-    print("---------------------------------------------------------------------------------\n"
-          "Brave One, did you hear? The White Wolf himself sent for our aid.\n"
-          "We must set out at once, Master Geralt needs us!\n")
+    print(WELCOME_MESSAGE)
     while not achieved_goal:
         describe_current_location(board, character)
         print(f"\nWe're currently at({character['X-coordinate']},{character['Y-coordinate']})")
@@ -53,7 +56,7 @@ def game():
 
 def main():
     """
-    Start game
+    Start the game
     """
 
 

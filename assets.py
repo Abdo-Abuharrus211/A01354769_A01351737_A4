@@ -13,7 +13,7 @@ def make_board(rows: int, columns: int) -> dict:
     :param columns: integer greater than 2
     :precondition rows: must be an integer greater than 2
     :precondition columns: must be an integer greater than 2
-    :postcondition: creates a dictionary that defines the map of the gam
+    :postcondition: creates a dictionary that defines the map of the game
     :raise ValueError: raises ValueError if either row or column input is not an integer greater than 2
     :return: dictionary of the map for the game
 
@@ -23,6 +23,7 @@ def make_board(rows: int, columns: int) -> dict:
         raise ValueError("Rows and columns must both be 10")
 
     else:
+        # TODO: Replace with simpler dict comprehension?
         list_rows = list(range(0, rows))
         list_columns = list(range(0, columns))
         board = {}
@@ -50,7 +51,7 @@ def make_character() -> dict:
 
 def main():
     """
-    Drives the program
+    Drive the program
     """
 
 
