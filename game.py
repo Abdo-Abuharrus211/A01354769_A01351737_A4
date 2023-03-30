@@ -38,6 +38,7 @@ def game():
             there_is_a_challenger = check_for_foes()
             if there_is_a_challenger:
                 duelling_game(character)
+            level_up(character)
             achieved_goal = check_victory(board, character)
         if not dead_yet(character) and achieved_goal:
             # Print something to user here upon game completion here...
