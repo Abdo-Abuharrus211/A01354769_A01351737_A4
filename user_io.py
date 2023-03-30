@@ -1,6 +1,7 @@
 """
     For functions that interact with the player.
 """
+import random
 
 
 def get_user_choice() -> str:
