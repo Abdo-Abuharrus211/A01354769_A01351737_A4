@@ -36,7 +36,7 @@ def main():
     """
     Drive the program.
     """
-    pass
+    get_user_choice()
 
 
 if __name__ == "__main__":

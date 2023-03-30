@@ -87,15 +87,28 @@ def level_up(character):
     :precondition character: must be a dictionary of character attributes
                              containing string keys X-coordinate, Y-coordinate, current HP, current XP and Knowledge
     :postcondition: update Knowledge if appropriate based on current XP
+    >>> bob={"X-coordinate": 0, "Y-coordinate": 0, "Current HP": 7, "Current XP": 50, "Knowledge": 0}
+    >>> level_up(bob)
+    >>> print(bob)
+    {'X-coordinate': 0, 'Y-coordinate': 0, 'Current HP': 7, 'Current XP': 50, 'Knowledge': 0}
+    >>> ellie={"X-coordinate": 0, "Y-coordinate": 0, "Current HP": 7, "Current XP": 101, "Knowledge": 0}
+    >>> level_up(ellie)
+    >>> print(ellie)
+    {'X-coordinate': 0, 'Y-coordinate': 0, 'Current HP': 7, 'Current XP': 101, 'Knowledge': 1}
+    >>> sam={"X-coordinate": 0, "Y-coordinate": 0, "Current HP": 7, "Current XP": 312, "Knowledge": 0}
+    >>> level_up(sam)
+    >>> print(sam)
+    {'X-coordinate': 0, 'Y-coordinate': 0, 'Current HP': 7, 'Current XP': 312, 'Knowledge': 3}
+
     """
-    # TODO: should we just increment the knowledge level instead?
+    # TODO: when everything's done, switch to named levels like below
     # as in every 100XP earned Knowledge level is bumped up.
     # Also, how about instead of level 1, 2, 3 we can have "Novice", "Bookworm", and "Master Custodian" ?
     if 100 <= character["Current XP"] < 200:
         character["Knowledge"] = 1
     elif 200 <= character["Current XP"] < 300:
-        character["Knowledge"] = 2
-    elif 300 <= character["Knowledge"] < 400:
+        character["Current XP"] = 2
+    elif 300 <= character["Current XP"] < 400:
         character["Knowledge"] = 3
 
 

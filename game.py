@@ -13,7 +13,7 @@ from user_io import get_user_choice
 
 def game():
     """
-    Initiate the game loop and don't end it until Victory or Game Over.
+    Initiate the game loop and don't end it until player Wins or Game Over.
     """
     rows = 10
     columns = 10
@@ -51,7 +51,7 @@ def game():
             # Print something to user here upon game completion here...
             break
         elif not dead_yet(character) and not achieved_goal:
-            print("Our quest lingers on...")
+        # print("Something_here")
         else:
             print("YOU DIED")
             break
