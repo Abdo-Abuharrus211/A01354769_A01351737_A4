@@ -1,4 +1,8 @@
+import random
+
 def describe_current_location(board: dict, character: dict, rows: int, columns: int) -> None:
+
+
     """
     Describes character location.
 
@@ -196,23 +200,18 @@ def guessing_game(character: dict):
     """
 
     player_level = character["Level"]
-    if player_level == 1:
-        question = random.choice(list(questions_level_1.items()))
-    if player_level == 2:
-        question = random.choice(list(questions_level_2.items()))
-    if player_level == 3:
-        question = random.choice(list(questions_level_3.items()))
-
+    current_dictionary = (f"questions_level_{player_level:.0f}").format(player_level)
+    question = random.choice(list(current_dictionary.items()))
     try:
-        answer = int(input(" You met an enemy who wants to play a game! Enter a number between 1 and 5 inclusive:"))
+        answer = int(input("Please input your answer as a number"))
     except ValueError:
         print("Please pick a number between 1 and 5 inclusive, you lost 1 HP")
         character["Current HP"] -= 1
     else:
-        if answer ==
+        if answer <1 or answer > 5:
             print("Please pick a number between 1 and 5 inclusive, you lost 1 HP")
             character["Current HP"] -= 1
-        elif guess == secret_number:
+        elif guess == current_dictionary[question]:
             print("You may pass unharmed")
         elif guess != secret_number:
             print("Incorrect, 1 hit taken")
