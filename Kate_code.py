@@ -148,6 +148,7 @@ def check_if_goal_attained(rows: int, columns: int, character: dict) -> bool:
     else:
         return False
 
+
 def guessing_game(character: dict):
     """
     Play a guessing game
