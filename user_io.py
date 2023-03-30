@@ -41,14 +41,13 @@ def duelling_game(character: dict):
     :postcondition: starts a single round of a guessing game, player must guess for a random integer in a range,
     and check if player's guess is correct or not, deducts 1 point from HP if they guess wrong
     """
-    print("A foe is here! You must use the Staff of Shaerrawedd's Tears of to guess the number and trick them.")
+    print("An enemy seeks to stop us from completing our journey, we have no choice but to overwhelm them "
+          "with Knowledge!")
     lower = 1
     upper = 5
     possibilities = [1, 2, 3, 4, 5]
     secret_number = str(random.randint(lower, upper))
     guess = input(f"Enter a number between {lower} and {upper} inclusive: ")
-    # guess = int(user_input)
-
     if guess.isdigit() and int(guess) in possibilities:
         if guess == secret_number:
             print("Hurray! You've beat the troll at his own game!")

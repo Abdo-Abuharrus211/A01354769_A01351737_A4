@@ -13,7 +13,7 @@ def make_description() -> str:
     :return: a random string from the collection of strings
     """
     # TODO: Add more room descriptions ~ 40-50
-    room_descriptions = ("The dusty scrolls of the stacks howelled with silence",
+    room_descriptions = ("The dusty scrolls of the stacks howled with an eerie silence",
                          "It seems a family of jumping spiders are practicing parkour")
     return room_descriptions[random.randint(0, len(room_descriptions) - 1)]
 
@@ -42,9 +42,7 @@ def make_board(rows: int, columns: int) -> dict:
     :postcondition: creates a dictionary that defines the map of the game
     :raise ValueError: raises ValueError if either row or column input is not an integer greater than 2
     :return: dictionary of the map for the game
-
     """
-
     if rows != 10 or columns != 10:
         raise ValueError("Rows and columns must both be 10")
 

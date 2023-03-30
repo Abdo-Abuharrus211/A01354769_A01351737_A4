@@ -35,7 +35,7 @@ def game():
         valid_move = False
 
         try:
-            valid_move = validate_move(board, character, direction)
+            valid_move = game_state_control.validate_move(board, character, direction)
         except KeyError as e:
             print(e)
 

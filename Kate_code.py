@@ -1,5 +1,6 @@
 import random
 
+
 def describe_current_location(board: dict, character: dict, rows: int, columns: int) -> None:
     """
     Describes character location.
@@ -48,26 +49,6 @@ def describe_current_location(board: dict, character: dict, rows: int, columns: 
     print(description_rooms[current_location])
 
 
-# def get_user_choice():
-#     """
-#     Return user input
-#
-#     :precondition: must input integer between 1 and 4 inclusive
-#     :postcondition: returns the direction chosen by player
-#     :return: chosen direction as a string
-#
-#     """
-#
-#     player_choice = (input("Choose a number for direction: \n 1: Up \n 2: Down \n 3: Left \n 4: Right: "))
-#     if player_choice == "1" or player_choice == "2" or player_choice == "3" or player_choice == "4":
-#         chosen_input = player_choice
-#         return chosen_input
-#     else:
-#         chosen_input = "You stay still. Please choose a number 1 to 4 to describe the direction you want to go"
-#         print("You stay still. Please choose a number 1 to 4 to describe the direction you want to go")
-#         return chosen_input
-
-
 def validate_move(rows: int, columns: int, character: dict, direction: str) -> bool:
     """
     Checks user input is valid.
@@ -83,7 +64,6 @@ def validate_move(rows: int, columns: int, character: dict, direction: str) -> b
     :precondition character: all dictionary values must be integers
     :precondition direction: must be a string of value either 1, 2, 3 or 4
     :return: True if user input is valid, False otherwise
-
     >>> validate_move(3, 3, {"X-coordinate": 0, "Y-coordinate": 0, "Current HP": 5}, "3")
     False
     >>> validate_move(3, 3, {"X-coordinate": 1, "Y-coordinate": 1, "Current HP": 5}, "2")
@@ -207,7 +187,7 @@ def guessing_game(character: dict):
         print("Please pick a number between 1 and 5 inclusive, you lost 1 HP")
         character["Current HP"] -= 1
     else:
-        if answer <1 or answer > 5:
+        if answer < 1 or answer > 5:
             print("Please pick a number between 1 and 5 inclusive, you lost 1 HP")
             character["Current HP"] -= 1
         elif guess == current_dictionary[question]:
