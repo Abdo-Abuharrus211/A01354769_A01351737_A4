@@ -58,7 +58,29 @@ def check_victory(board, character):
         return False
 
 
+def level_up(character):
+
+    """
+    Increase character knowledge level.
+
+    This function increases the character knowledge level based on experience points
+
+    :param character: dictionary representing player's character stats, current location,current HP,
+                        current XP and Knowledge
+    :preconditon character: must be a dictionary of character attributes
+                             containing string keys X-coordinate, Y-coordinate, current HP, current XP and Knowledge
+    :postcondition: update Knowledge if appropriate based on current XP
+    """
+
+    if 100 <= character["Current XP"] < 200:
+        character["Knowledge"] = 2
+    elif 200 <= character["Current XP"] < 300:
+        character["Knowledge"] = 3
+
+
+
 def main():
+
     """
     Drive the program.
     """
