@@ -217,31 +217,30 @@ def guessing_game(character: dict):
             character["Current HP"] -= 1
 
 
-def is_alive(character: dict) -> bool:
-    """
-    Determine if character is "alive"
-
-    Determines if the character is alive by checking if the HP points are > 0
-
-    :param character: dictionary of character attributes containing string keys X-coordinate, Y-coordinate and
-                    current HP with integer values
-    :precondition character: must be a dictionary of character attributes
-                    containing string keys X-coordinate, Y-coordinate and current HP
-    :precondition character: all dictionary values must be integers
-    :postcondition: return appropraite boolean value
-    :return: True if character is dead, False otherwise
-
-    >>> is_alive({"X-coordinate": 0, "Y-coordinate": 0, "Current HP": 4})
-    True
-    >>> is_alive({"X-coordinate": 1, "Y-coordinate": 1, "Current HP": 0})
-    False
-
-    """
-    # TODO: Can scrap this? I think mine is simpler.
-    if character["Current HP"] != 0:
-        return True
-    else:
-        return False
+# def is_alive(character: dict) -> bool:
+#     """
+#     Determine if character is "alive"
+#
+#     Determines if the character is alive by checking if the HP points are > 0
+#
+#     :param character: dictionary of character attributes containing string keys X-coordinate, Y-coordinate and
+#                     current HP with integer values
+#     :precondition character: must be a dictionary of character attributes
+#                     containing string keys X-coordinate, Y-coordinate and current HP
+#     :precondition character: all dictionary values must be integers
+#     :postcondition: return appropraite boolean value
+#     :return: True if character is dead, False otherwise
+#
+#     >>> is_alive({"X-coordinate": 0, "Y-coordinate": 0, "Current HP": 4})
+#     True
+#     >>> is_alive({"X-coordinate": 1, "Y-coordinate": 1, "Current HP": 0})
+#     False
+#
+#     """
+#     if character["Current HP"] != 0:
+#         return True
+#     else:
+#         return False
 
 
 def main():

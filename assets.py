@@ -5,6 +5,19 @@ Asset creation module
 import random
 
 
+def make_description() -> str:
+    """
+    Generate random description from a list of descriptions.
+
+    :postcondition: generate random integer to index through a list and obtain a room description
+    :return: a random string from the collection of strings
+    """
+    # TODO: Add more room descriptions ~ 40-50
+    room_descriptions = ("The dusty scrolls of the stacks howelled with silence",
+                         "It seems a family of jumping spiders are practicing parkour")
+    return room_descriptions[random.randint(0, len(room_descriptions) - 1)]
+
+
 def make_board(rows: int, columns: int) -> dict:
     """
     Create the game space.
@@ -23,14 +36,15 @@ def make_board(rows: int, columns: int) -> dict:
         raise ValueError("Rows and columns must both be 10")
 
     else:
-        # TODO: Replace with simpler dict comprehension?
-        list_rows = list(range(0, rows))
-        list_columns = list(range(0, columns))
-        board = {}
-        for row_item in list_rows:
-            for column_item in list_columns:
-                board[row_item, column_item] = random.randint(1, 9)
-        return board
+        # list_rows = list(range(0, rows))
+        # list_columns = list(range(0, columns))
+        # board = {}
+        # for row_item in list_rows:
+        #     for column_item in list_columns:
+        #         board[row_item, column_item] = random.randint(1, 9)
+        # return board
+        game_board = {(row, column): make_description() for row in range(rows) for column in range(columns)}
+        return game_board
 
 
 def make_character() -> dict:
