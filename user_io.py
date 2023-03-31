@@ -28,7 +28,7 @@ def get_user_choice() -> str:
                 need_direction = False
                 print(f"Heading {directions_dict[player_movement]}, off we go!")
             else:
-                raise ValueError("\nWe mustn't wander astray!\nWe need to head on a direction that's on our path.")
+                raise ValueError("\nWe mustn't wander astray!\nWe need to head in a direction that's on our path.")
     return player_movement
 
 
@@ -36,7 +36,6 @@ def main():
     """
     Drive the program.
     """
-    get_user_choice()
 
 
 if __name__ == "__main__":
