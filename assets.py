@@ -7,8 +7,11 @@ import random
 
 def make_description() -> str:
     """
-    Generate random description from a list of descriptions.
+    Generate description.
 
+    This function generates a random description from a list of descriptions.
+
+    :precondition: must have a dictionary of room descriptions
     :postcondition: generate random integer to index through a list and obtain a room description
     :return: a random string from the collection of strings
     """
