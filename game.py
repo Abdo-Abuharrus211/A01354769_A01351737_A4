@@ -46,6 +46,7 @@ def game():
             if there_is_a_challenger:
                 duelling_game(character)
             level_up(character)
+            # TODO: Where to add final boss call
             achieved_goal = check_victory(board, character)
         if not dead_yet(character) and achieved_goal:
             # Print something to user here upon game completion here...
