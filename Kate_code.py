@@ -57,6 +57,7 @@ def guessing_game(character: dict):
 
     # TODO: Kate's question guessing game, troubleshoot and fix together consulting Chris
     # Once matter is resolved, then can work together on this. Refer to the flowchart and game diagram
+    print("You have met an enemy who wants to ask you a question!\n")
 
     player_level = character["Knowledge"]
     if player_level == 1:
@@ -70,7 +71,8 @@ def guessing_game(character: dict):
 
     # current_dictionary = (f"questions_level_{player_level:.0f}").format(player_level)  # What's this doing?
     question = random.choice(list(current_dictionary))
-    print("You have met an enemy who wants to ask you a question!\n", question)
+    print(question)
+
     try:
         answer = int(input("Choose your answer little one: "))
     except ValueError:
