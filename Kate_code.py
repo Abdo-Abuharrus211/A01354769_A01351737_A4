@@ -86,11 +86,12 @@ def check_for_final_boss(character: dict) -> bool:
     else:
         return False
 
+
 def final_boss(character: dict):
     """
     Play quiz with final boss
 
-    This function plays a game where the user must select the correct asnwer.
+    This function plays a game where the user must select the correct answer.
 
     :param character: dictionary of character attributes containing string keys X-coordinate, Y-coordinate and
                     current HP with integer values
@@ -101,13 +102,13 @@ def final_boss(character: dict):
     """
 
     print("Which of the following, In infinite Jest, si not something you would learn from spending time "
-                      "in a halfway house?\n"
-                      "1: That, perversley, it is often more fun to want something than to have it\n"
-                      "2: That you cannot win all of the time \n"
-                      "3: That everybody is identical in their secret, unspoken belief that way deep down, they are \n"
-                      "different from everyone else\n"
-                      "4: That certain persons simply will not like you, no matter what you do\n"
-                      "That there is such a thing as raw, unalloyed, agendaless kindness")
+          "in a halfway house?\n"
+          "1: That, perversely, it is often more fun to want something than to have it\n"
+          "2: That you cannot win all of the time \n"
+          "3: That everybody is identical in their secret, unspoken belief that way deep down, they are \n"
+          "different from everyone else\n"
+          "4: That certain persons simply will not like you, no matter what you do\n"
+          "That there is such a thing as raw, unalloyed, agendaless kindness")
 
     try:
         answer = int(input("Pick a number little one"))

@@ -42,7 +42,7 @@ def game():
             move_character(character, direction)
             describe_current_location(board, character)
             # TODO I'm thinking of checking current HP in the boss version of check_for_foes and running from here?
-            # TODO fucntion is in Kate-Code
+            # TODO function is in Kate-Code
             there_is_a_challenger = check_for_foes()
             print()
             if there_is_a_challenger:
