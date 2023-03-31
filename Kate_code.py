@@ -1,5 +1,7 @@
 import random
 
+from questions_dictionary import questions_level_1, questions_level_2, questions_level_3
+
 
 # def move_character(character: dict, direction: str) -> None:
 #     """
@@ -55,17 +57,29 @@ def guessing_game(character: dict):
 
     # TODO: Kate's question guessing game, troubleshoot and fix together consulting Chris
     # Once matter is resolved, then can work together on this. Refer to the flowchart and game diagram
+
     player_level = character["Knowledge"]
-    current_dictionary = (f"questions_level_{player_level:.0f}").format(player_level)  # What's this doing?
-    question = random.choice(list(current_dictionary).items())
+    if player_level == 1:
+        current_dictionary = questions_level_1
+        pass
+    elif player_level == 2:
+        current_dictionary = questions_level_2
+        pass
+    else:
+        current_dictionary = questions_level_3
+
+    # current_dictionary = (f"questions_level_{player_level:.0f}").format(player_level)  # What's this doing?
+    question = random.choice(list(current_dictionary))
+    print(type(question))
+    print(question)
     try:
-        answer = int(input("Pick a number little one"))
+        answer = int(input("Choose your answer little one: "))
     except ValueError:
         print("Please pick a number between 1 and 5 inclusive, you lost 1 HP")
         character["Current HP"] -= 1
     else:
         if answer < 1 or answer > 5:
-            print("Please pick a number between 1 and 5 inclusive, you lost 1 HP")
+            print("Please pick a A01354769_A01351737_A4number between 1 and 5 inclusive, you lost 1 HP")
             character["Current HP"] -= 1
         elif answer == current_dictionary[question]:
             print("You may pass unharmed")
@@ -129,7 +143,7 @@ def main():
     """
     Drive the program.
     """
-    pass
+    guessing_game({"X-coordinate": 0, "Y-coordinate": 0, "Current HP": 7, "Current XP": 0, "Knowledge": 2})
 
 
 if __name__ == "__main__":
