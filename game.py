@@ -1,8 +1,8 @@
 """
 Abdo & Kate make a game for A4
 """
+from Kate_code import guessing_game, check_for_final_boss, final_boss
 from assets import make_board, make_character
-
 
 import assets
 import game_mechanics
@@ -39,22 +39,28 @@ def game():
             print(e)
 
         if valid_move:
-            move_character(character, direction)
-            describe_current_location(board, character)
+            game_mechanics.move_character(character, direction)
+            game_mechanics.describe_current_location(board, character)
             # TODO I'm thinking of checking current HP in the boss version of check_for_foes and running from here?
-            # TODO fucntion is in Kate-Code
-            there_is_a_challenger = check_for_foes()
+            # TODO function is in Kate-Code
+            there_is_a_challenger = game_state_control.check_for_foes()
             print()
             if there_is_a_challenger:
-                duelling_game(character)
-            level_up(character)
+                guessing_game(character)
+            game_state_control.level_up(character)
             # TODO: Where to add final boss call
-            achieved_goal = check_victory(board, character)
-        if not dead_yet(character) and achieved_goal:
+            # achieved_goal = check_victory(board, character) # No need to check for achieved goal cuz only win boss
+        if not game_state_control.dead_yet(character) and achieved_goal:
             # Print something to user here upon game completion here...
             break
-        elif not dead_yet(character) and not achieved_goal:
-        # print("Something_here")
+        # check if alive and not ready for boss.
+        elif not game_state_control.dead_yet(character) and not check_for_final_boss(character):
+            print("Our trek continues little one.")
+
+        # check if alive and not ready for boss.
+        elif not game_state_control.dead_yet(character) and check_for_final_boss(character):
+            print("It's Vermax the Python of the Courtyard!!!!")  # TODO: add drama here...
+            final_boss(character)
         else:
             print("YOU DIED")
             break
