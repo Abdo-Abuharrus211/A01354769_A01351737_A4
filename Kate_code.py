@@ -79,7 +79,7 @@ def guessing_game(character: dict):
         character["Current HP"] -= 1
     else:
         if answer < 1 or answer > 5:
-            print("Please pick a A01354769_A01351737_A4number between 1 and 5 inclusive, you lost 1 HP")
+            print("Please pick a number between 1 and 5 inclusive, you lost 1 HP")
             character["Current HP"] -= 1
         elif answer == current_dictionary[question]:
             print("You may pass unharmed")
