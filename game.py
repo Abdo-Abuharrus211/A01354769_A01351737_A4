@@ -4,7 +4,6 @@ Abdo & Kate make a game for A4
 from Kate_code import guessing_game, check_for_final_boss, final_boss
 from assets import make_board, make_character
 
-
 import assets
 import game_mechanics
 import game_state_control
@@ -54,9 +53,12 @@ def game():
         if not game_state_control.dead_yet(character) and achieved_goal:
             # Print something to user here upon game completion here...
             break
-        elif not game_state_control.dead_yet(character) and not achieved_goal and not check_for_final_boss(character):
+        # check if alive and not ready for boss.
+        elif not game_state_control.dead_yet(character) and not check_for_final_boss(character):
             print("Our trek continues little one.")
-        elif not game_state_control.dead_yet(character) and not achieved_goal and check_for_final_boss(character):
+
+        # check if alive and not ready for boss.
+        elif not game_state_control.dead_yet(character) and check_for_final_boss(character):
             print("It's Vermax the Python of the Courtyard!!!!")  # TODO: add drama here...
             final_boss(character)
         else:
