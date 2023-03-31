@@ -59,7 +59,7 @@ def game():
 
         # check if alive and not ready for boss.
         elif not game_state_control.dead_yet(character) and check_for_final_boss(character):
-            print("It's Vermax the Python of the Courtyard!!!!")  # TODO: add drama here...
+            print("It's Caraxes the Python of the Courtyard!!!!")  # TODO: add drama here...
             final_boss(character)
         else:
             print("YOU DIED")
@@ -71,6 +71,7 @@ def main():
     """
     Start the game
     """
+    game()
 
 
 if __name__ == "__main__":
