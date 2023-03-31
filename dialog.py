@@ -9,3 +9,5 @@ WELCOME_MESSAGE = "\nOh, you're awake. Don't be alarmed little one. I know this 
                   "I'll guide you through this labyrinth of tomes and scrolls."
 
 ENEMY_ENCOUNTER = "An enemy blocks our path and threatens our journey. We must battle them with knowledge!"
+
+SPACER = "==========================================================="

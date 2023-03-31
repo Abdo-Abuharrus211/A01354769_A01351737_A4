@@ -2,7 +2,8 @@
 Abdo & Kate make a game for A4
 """
 from Kate_code import guessing_game, check_for_final_boss, final_boss
-from assets import make_board, make_character
+from assets import make_board, make_character, make_enemy
+from dialog import SPACER
 
 import assets
 import game_mechanics
@@ -24,7 +25,7 @@ def game():
 
     print(dialog.WELCOME_MESSAGE)
     while not achieved_goal:
-        game_mechanics.describe_current_location(board, character)
+        print(SPACER)
         print(f"\nWe're currently at({character['X-coordinate']},{character['Y-coordinate']})")
 
         try:
@@ -44,7 +45,6 @@ def game():
             # TODO I'm thinking of checking current HP in the boss version of check_for_foes and running from here?
             # TODO function is in Kate-Code
             there_is_a_challenger = game_state_control.check_for_foes()
-            print()
             if there_is_a_challenger:
                 guessing_game(character)
             game_state_control.level_up(character)
