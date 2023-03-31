@@ -1,6 +1,7 @@
 """
 Abdo & Kate make a game for A4
 """
+from Kate_code import guessing_game
 from assets import make_board, make_character
 
 
@@ -39,14 +40,14 @@ def game():
             print(e)
 
         if valid_move:
-            move_character(character, direction)
-            describe_current_location(board, character)
+            game_mechanics.move_character(character, direction)
+            game_mechanics.describe_current_location(board, character)
             # TODO I'm thinking of checking current HP in the boss version of check_for_foes and running from here?
             # TODO function is in Kate-Code
-            there_is_a_challenger = check_for_foes()
+            there_is_a_challenger = game_state_control.check_for_foes()
             print()
             if there_is_a_challenger:
-                duelling_game(character)
+                guessing_game(character)
             level_up(character)
             # TODO: Where to add final boss call
             achieved_goal = check_victory(board, character)
