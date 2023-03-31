@@ -1,0 +1,16 @@
+
+
+To-Do:
+Implement the guessing game
+Implement the boss battle
+
+
+
+
+
+
+
+Add function annotations
+Review docstrings
+conduct doctests
+Implement Unit tests

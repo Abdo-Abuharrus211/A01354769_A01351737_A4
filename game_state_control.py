@@ -1,6 +1,7 @@
 """
     This module is for functions controlling and checking the game's and other crucial control statements.
 """
+import random
 
 
 def validate_move(board: dict, character: dict, direction: str) -> bool:
@@ -30,7 +31,6 @@ def validate_move(board: dict, character: dict, direction: str) -> bool:
      >>> validate_move(board_three, character_three, direction_three)
      True
      """
-
     if direction == "N" and 0 <= character["Y-coordinate"] - 1:
         valid_move = True
     elif direction == "S" and character["Y-coordinate"] + 1 <= max(board)[1]:
@@ -40,22 +40,19 @@ def validate_move(board: dict, character: dict, direction: str) -> bool:
     elif direction == "W" and 0 <= character["X-coordinate"] - 1:
         valid_move = True
     else:
-        raise KeyError("We mustn't enter Brokilon, Brave One. The Dryads will shoot us from 3 fathoms away,"
-                       "let's turn back.")
-
+        raise KeyError("You mustn't leave the bookshop, little one. You're too vulnerable to venture beyond the "
+                       "territory of books.")
     return valid_move
 
 
 def check_for_foes() -> bool:
     """
-    Determine if there's a 25% chance to face and fight a foe to fight by generating a random integer.
+    Determine if there's a 20% chance to face and fight a foe to fight by generating a random integer.
 
     :postcondition: generates random integer in a specific range then check if it's equal or greater than 25%
     :return: True if there's a 25% or more chance of facing a foe, return False otherwise
     """
-
-    # TODO: should rework this, 25% seems a bit high no?
-    return random.randint(1, 4) == 1
+    return random.randint(1, 10) <= 2
 
 
 def dead_yet(character):
@@ -79,36 +76,6 @@ def dead_yet(character):
     return character["Current HP"] == 0
 
 
-def check_victory(board, character):
-    """
-    Determine if the player is victorious and has reached the end point (bottom right corner) alive
-
-    :param board: dictionary representing the game board's rooms, with (x,y) coordinates as keys and string values.
-    :param character: dictionary representing player's character stats, current location and HP
-    :precondition: board is valid dictionray containing board's specifications and character is valid dictionary
-                    containing character's stats
-    :postcondition: accurately determines if player is at the end point's coordinates
-    :return: True if the player completes the game, return False otherwise
-    >>> board_one = {(0, 0): "Potato", (0,1): "Pie", (1, 0): "Cheese", (1,1): "Burger"}
-     >>> character_one = {"X-coordinate": 0, "Y-coordinate": 0, "Current HP": 5}
-     >>> check_victory(board_one, character_one)
-     False
-     >>> board_one = {(0, 0): "Potato", (0,1): "Pie", (1, 0): "Cheese", (1,1): "Burger"}
-     >>> character_one = {"X-coordinate": 1, "Y-coordinate": 0, "Current HP": 2}
-     >>> check_victory(board_one, character_one)
-     False
-     >>> board_one = {(0, 0): "Potato", (0,1): "Pie", (1, 0): "Cheese", (1,1): "Burger"}
-     >>> character_one = {"X-coordinate": 1, "Y-coordinate": 1, "Current HP": 0}
-     >>> check_victory(board_one, character_one)
-     True
-     """
-    # TODO: Need to redefine what victory is and how we check for it.
-    if character["X-coordinate"] == max(board)[0] and character["Y-coordinate"] == max(board)[1]:
-        return True
-    else:
-        return False
-
-
 def level_up(character):
     """
     Increase the character's knowledge level if they reach the level up threshold.
@@ -117,16 +84,31 @@ def level_up(character):
 
     :param character: dictionary representing player's character stats, current location,current HP,
                         current XP and Knowledge
-    :preconditon character: must be a dictionary of character attributes
+    :precondition character: must be a dictionary of character attributes
                              containing string keys X-coordinate, Y-coordinate, current HP, current XP and Knowledge
     :postcondition: update Knowledge if appropriate based on current XP
+    >>> bob={"X-coordinate": 0, "Y-coordinate": 0, "Current HP": 7, "Current XP": 50, "Knowledge": 0}
+    >>> level_up(bob)
+    >>> print(bob)
+    {'X-coordinate': 0, 'Y-coordinate': 0, 'Current HP': 7, 'Current XP': 50, 'Knowledge': 0}
+    >>> ellie={"X-coordinate": 0, "Y-coordinate": 0, "Current HP": 7, "Current XP": 101, "Knowledge": 0}
+    >>> level_up(ellie)
+    >>> print(ellie)
+    {'X-coordinate': 0, 'Y-coordinate': 0, 'Current HP': 7, 'Current XP': 101, 'Knowledge': 1}
+    >>> sam={"X-coordinate": 0, "Y-coordinate": 0, "Current HP": 7, "Current XP": 312, "Knowledge": 0}
+    >>> level_up(sam)
+    >>> print(sam)
+    {'X-coordinate': 0, 'Y-coordinate': 0, 'Current HP': 7, 'Current XP': 312, 'Knowledge': 3}
+
     """
-    # TODO: should we just increment the knowledge level instead?
+    # TODO: when everything's done, switch to named levels like below
     # as in every 100XP earned Knowledge level is bumped up.
     # Also, how about instead of level 1, 2, 3 we can have "Novice", "Bookworm", and "Master Custodian" ?
     if 100 <= character["Current XP"] < 200:
-        character["Knowledge"] = 2
+        character["Knowledge"] = 1
     elif 200 <= character["Current XP"] < 300:
+        character["Current XP"] = 2
+    elif 300 <= character["Current XP"] < 400:
         character["Knowledge"] = 3
 
 
