@@ -50,9 +50,9 @@ def game():
             game_state_control.level_up(character)
             # TODO: Where to add final boss call
             # achieved_goal = check_victory(board, character) # No need to check for achieved goal cuz only win boss
-        if not game_state_control.dead_yet(character) and achieved_goal:
-            # Print something to user here upon game completion here...
-            break
+        # if not game_state_control.dead_yet(character) and achieved_goal:
+        #     # Print something to user here upon game completion here...
+        #     break
         # check if alive and not ready for boss.
         elif not game_state_control.dead_yet(character) and not check_for_final_boss(character):
             print("Our trek continues little one.")
