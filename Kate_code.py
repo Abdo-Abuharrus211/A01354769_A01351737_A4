@@ -60,7 +60,8 @@ def check_for_final_boss(character: dict) -> bool:
     :return: True if there's a 20% or more chance of facing a foe, return False otherwise
     """
     if character["Knowledge"] >= 400:
-        return random.randint(1, 10) <= 2
+        return True
+        # return random.randint(1, 10) <= 2
     else:
         return False
 
