@@ -1,7 +1,7 @@
 """
 Abdo & Kate make a game for A4
 """
-from Kate_code import guessing_game
+from Kate_code import guessing_game, check_for_final_boss, final_boss
 from assets import make_board, make_character
 
 
@@ -48,14 +48,17 @@ def game():
             print()
             if there_is_a_challenger:
                 guessing_game(character)
-            level_up(character)
+            game_state_control.level_up(character)
             # TODO: Where to add final boss call
-            achieved_goal = check_victory(board, character)
-        if not dead_yet(character) and achieved_goal:
+            # achieved_goal = check_victory(board, character) # No need to check for achieved goal cuz only win boss
+        if not game_state_control.dead_yet(character) and achieved_goal:
             # Print something to user here upon game completion here...
             break
-        elif not dead_yet(character) and not achieved_goal:
-        # print("Something_here")
+        elif not game_state_control.dead_yet(character) and not achieved_goal and not check_for_final_boss(character):
+            print("Our trek continues little one.")
+        elif not game_state_control.dead_yet(character) and not achieved_goal and check_for_final_boss(character):
+            print("It's Vermax the Python of the Courtyard!!!!")  # TODO: add drama here...
+            final_boss(character)
         else:
             print("YOU DIED")
             break
