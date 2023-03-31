@@ -70,8 +70,7 @@ def guessing_game(character: dict):
 
     # current_dictionary = (f"questions_level_{player_level:.0f}").format(player_level)  # What's this doing?
     question = random.choice(list(current_dictionary))
-    print(type(question))
-    print(question)
+    print("You have met an enemy who wants to ask you a question!\n", question)
     try:
         answer = int(input("Choose your answer little one: "))
     except ValueError:
@@ -115,7 +114,7 @@ def final_boss(character: dict):
     :postcondition: update to character dictionary as appropriate
     """
 
-    print("Which of the following, In infinite Jest, si not something you would learn from spending time "
+    print("Which of the following, In infinite Jest, is not something you would learn from spending time "
           "in a halfway house?\n"
           "1: That, perversely, it is often more fun to want something than to have it\n"
           "2: That you cannot win all of the time \n"
@@ -125,26 +124,26 @@ def final_boss(character: dict):
           "That there is such a thing as raw, unalloyed, agendaless kindness")
 
     try:
-        answer = int(input("Pick a number little one"))
+        answer = int(input("Choose your answer little one"))
     except ValueError:
         print("You did not chose an answer in range, game over")
         character["Current HP"] = 0
     else:
         if answer < 1 or answer > 5:
             print("You did not chose an answer in range, game over")
-            character["Current HP"] -= 0
+            character["Current HP"] = 0
         elif answer == 2:
             print("Congratulations, you won!")
         elif answer != 2:
             print("Incorrect, game over")
-            character["Current HP"] -= 0
+            character["Current HP"] = 0
 
 
 def main():
     """
     Drive the program.
     """
-    guessing_game({"X-coordinate": 0, "Y-coordinate": 0, "Current HP": 7, "Current XP": 0, "Knowledge": 2})
+    guessing_game({"X-coordinate": 0, "Y-coordinate": 0, "Current HP": 7, "Current XP": 400, "Knowledge": 2})
 
 
 if __name__ == "__main__":
