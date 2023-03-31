@@ -74,7 +74,17 @@ def guessing_game(character: dict):
             character["Current HP"] -= 1
 
 
+def check_for_final_boss(character: dict) -> bool:
+    """
+    Determine if there's a 20% chance to face and fight a foe to fight by generating a random integer.
 
+    :postcondition: generates random integer in a specific range then check if it's equal or greater than 25%
+    :return: True if there's a 20% or more chance of facing a foe, return False otherwise
+    """
+    if character["Knowledge"] >= 400:
+        return random.randint(1, 10) <= 2
+    else:
+        return False
 
 def final_boss(character: dict):
     """
