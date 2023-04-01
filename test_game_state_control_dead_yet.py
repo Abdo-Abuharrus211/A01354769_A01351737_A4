@@ -1,6 +1,13 @@
+from game_state_control import dead_yet
 from unittest import TestCase
 
 
-class Test(TestCase):
-    def test_dead_yet(self):
-        self.fail()
+class TestDeadYet(TestCase):
+
+    def test_dead_yet_yes(self):
+        character_test = {'X-coordinate': 0, 'Y-coordinate': 0, 'Current HP': 0}
+        self.assertEqual(True, dead_yet(character_test))
+
+    def test_dead_yet_no(self):
+        character_test = {'X-coordinate': 0, 'Y-coordinate': 0, 'Current HP': 6}
+        self.assertEqual(False, dead_yet(character_test))
