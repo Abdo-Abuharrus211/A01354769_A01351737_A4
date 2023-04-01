@@ -125,7 +125,7 @@ def make_character() -> dict:
     >>> make_character()
     {'X-coordinate': 0, 'Y-coordinate': 0, 'Current HP': 7, 'Current XP': 0, 'Knowledge': 0}
     """
-    player = {"X-coordinate": 0, "Y-coordinate": 0, "Current HP": 7, "Current XP": 360, "Knowledge": 0}
+    player = {"X-coordinate": 0, "Y-coordinate": 0, "Current HP": 7, "Current XP": 360, "Knowledge": 1}
     return player
 
 

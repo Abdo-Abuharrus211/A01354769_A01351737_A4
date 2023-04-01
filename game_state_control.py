@@ -92,7 +92,7 @@ def level_up(character: dict):
     :precondition character: must be a dictionary of character attributes
                              containing string keys X-coordinate, Y-coordinate, current HP, current XP and Knowledge
     :postcondition: update Knowledge if appropriate based on current XP
-    >>> bob={"X-coordinate": 0, "Y-coordinate": 0, "Current HP": 7, "Current XP": 50, "Knowledge": 0}
+    >>> bob={"X-coordinate": 0, "Y-coordinate": 0, "Current HP": 7, "Current XP": 50, "Knowledge": 1}
     >>> level_up(bob)
     >>> print(bob)
     {'X-coordinate': 0, 'Y-coordinate': 0, 'Current HP': 7, 'Current XP': 50, 'Knowledge': 0}

@@ -16,6 +16,8 @@ From assignment sheet:
 - use of membership operator? waht's this?
 - we need to use itertools somewhere
 - we need to format output with f strings
+- do you have any knowledge on GUI? if it's a kinda easy to implement and we have time we can... I think he said
+there might be bonus marks... tbc. What do you think? If it's hella effort then fuck it though
 
 
 
