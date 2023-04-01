@@ -1,8 +1,8 @@
 
 
 To-Do:
-Implement the guessing game
-Implement the boss battle
+Implement the guessing game @done
+Implement the boss battle @done
 
 
 
@@ -10,7 +10,19 @@ Implement the boss battle
 
 
 
-Add function annotations
+Add function annotations @done
 Review docstrings
 conduct doctests
-Implement Unit tests
+Implement Unit tests - mainly done except for I think check_final_boss
+ - move_character @done
+ - create character
+ - create board - can we call another function within the make board (ie make description?) I think it has to be stand
+                alone no? Not sure how to unit test this - the error ones are done though
+ - make_description
+ - make_enemy
+ - check_for_foes @done
+ - dead_yet @done
+-  level_up
+ - check_final_boss - I don't want to touch this one coz it's linked in with how you have the game play flow but
+                        is there the chance built into this or only XP?
+ - final_boss @done
