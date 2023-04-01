@@ -110,11 +110,11 @@ def level_up(character: dict):
     # as in every 100XP earned Knowledge level is bumped up.
     # Also, how about instead of level 1, 2, 3 we can have "Novice", "Bookworm", and "Master Custodian" ?
     if 0 <= character["Current XP"] < 100:
-        character["Knowledge"] = 1
+        character["Knowledge"] = "Novice"
     elif 100 <= character["Current XP"] < 200:
-        character["Knowledge"] = 2
+        character["Knowledge"] = "Bookworm"
     elif 200 <= character["Current XP"] < 300:
-        character["Knowledge"] = 3
+        character["Knowledge"] = "Master Custodian"
 
 
 def main():
