@@ -78,7 +78,8 @@ def final_boss(character: dict):
     :precondition character: must be a dictionary of character attributes
                              containing string keys X-coordinate, Y-coordinate and current HP
     :precondition character: all dictionary values must be integers
-    :postcondition: update to character dictionary as appropriate
+    :postcondition: prints appropriate message
+    :postcondition: character HP goes to 0
     """
 
     print("Which of the following, In infinite Jest, is not something you would learn from spending time "
