@@ -15,6 +15,7 @@ def validate_move(board: dict, character: dict, direction: str) -> bool:
     :postcondition: Correctly checks if direction is valid and if the move keeps player within bounds
     :return: True if moving in player's desired direction is still within bounds, return False otherwise
     :raises KeyError: if moving in a direction leads out of bounds
+
      >>> board_one = {(0, 0): "Potato", (0,1): "Pie", (1, 0): "Cheese", (1,1): "Burger"}
      >>> character_one = {"X-coordinate": 0, "Y-coordinate": 0, "Current HP": 5}
      >>> direction_one = "S"
@@ -47,15 +48,18 @@ def validate_move(board: dict, character: dict, direction: str) -> bool:
 
 def check_for_foes() -> bool:
     """
-    Determine if there's a 20% chance to face and fight a foe to fight by generating a random integer.
+    Determine if there is a foe.
+
+    This function Determines if there's a 30% chance to face and fight a foe to fight by generating a random integer.
 
     :postcondition: generates random integer in a specific range then check if it's equal or greater than 25%
-    :return: True if there's a 25% or more chance of facing a foe, return False otherwise
+    :return: True if there's a 30% or more chance of facing a foe, return False otherwise
+
     """
     return random.randint(1, 6) <= 2
 
 
-def dead_yet(character):
+def dead_yet(character: dict) -> dict:
     """
     Determine if the player's character is dead.
 
@@ -76,7 +80,7 @@ def dead_yet(character):
     return character["Current HP"] == 0
 
 
-def level_up(character):
+def level_up(character: dict):
     """
     Increase the character's knowledge level if they reach the level up threshold.
 
