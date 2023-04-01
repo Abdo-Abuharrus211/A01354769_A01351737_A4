@@ -46,6 +46,7 @@ def guessing_game(character: dict):
             print("'Please pick a number between 1 and 5 inclusive, you lost 1 HP'")
             character["Current HP"] -= 1
         elif answer == current_dictionary[question]:
+            character["Current XP"] += 20
             print("You may pass unharmed")
         elif answer != current_dictionary[question]:
             print("'Incorrect, 1 hit taken'")
@@ -59,7 +60,7 @@ def check_for_final_boss(character: dict) -> bool:
     :postcondition: generates random integer in a specific range then check if it's equal or greater than 25%
     :return: True if there's a 20% or more chance of facing a foe, return False otherwise
     """
-    if character["Knowledge"] >= 400:
+    if character["Current XP"] >= 400:
         return True
         # return random.randint(1, 10) <= 2
     else:

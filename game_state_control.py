@@ -52,7 +52,7 @@ def check_for_foes() -> bool:
     :postcondition: generates random integer in a specific range then check if it's equal or greater than 25%
     :return: True if there's a 25% or more chance of facing a foe, return False otherwise
     """
-    return random.randint(1, 10) <= 2
+    return random.randint(1, 6) <= 2
 
 
 def dead_yet(character):
