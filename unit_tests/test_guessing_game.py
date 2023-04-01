@@ -2,14 +2,14 @@ import io
 from unittest import TestCase
 from unittest.mock import patch
 
-from Kate_code import guessing_game
+from user_io import guessing_game
 
 
 class TestGuessingGame(TestCase):
 
     @patch('builtins.input', side_effect=[2])
-    @patch('random.choice', return_value= "What are the main characters in Never Let Me Go? "
-                                     "\n 1: Clones\n 2: Humans\n 3: Robots \n 4: Faceless AI \n 5: Dream characters")
+    @patch('random.choice', return_value="What are the main characters in Never Let Me Go? "
+                                         "\n 1: Clones\n 2: Humans\n 3: Robots \n 4: Faceless AI \n 5: Dream characters")
     @patch('sys.stdout', new_callable=io.StringIO)
     def test_guessing_game_correct_print(self, mock_output, _, __):
         character = {"Current HP": 4, "Knowledge": 2}
@@ -83,7 +83,3 @@ class TestGuessingGame(TestCase):
         expected_output = {"Current HP": 2}
         actual_output = character
         self.assertEqual(expected_output, actual_output)
-
-
-
-

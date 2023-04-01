@@ -113,6 +113,20 @@ def level_up(character: dict):
         character["Knowledge"] = "Master Custodian"
 
 
+def check_for_final_boss(character: dict) -> bool:
+    """
+    Determine if there's a 20% chance to face and fight a foe to fight by generating a random integer.
+
+    :postcondition: generates random integer in a specific range then check if it's equal or greater than 25%
+    :return: True if there's a 20% or more chance of facing a foe, return False otherwise
+    """
+    random_chance = random.randint(1, 10) <= 4
+    if character["Current XP"] >= 400 and random_chance:
+        return True
+    else:
+        return False
+
+
 def main():
     """
     Drive the program.

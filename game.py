@@ -1,14 +1,14 @@
 """
 Abdo & Kate make a game for A4
 """
-from Kate_code import guessing_game, check_for_final_boss, final_boss
+from user_io import get_user_choice, guessing_game, final_boss
+from game_state_control import check_for_final_boss
 from assets import make_board, make_character
 from dialog import SPACER
 
 import game_mechanics
 import game_state_control
 import dialog
-from user_io import get_user_choice
 
 
 def game():
