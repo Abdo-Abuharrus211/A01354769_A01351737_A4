@@ -81,18 +81,27 @@ def final_boss(character: dict):
     :postcondition: prints appropriate message
     :postcondition: character HP goes to 0
     """
-
-    print("Which of the following, In infinite Jest, is not something you would learn from spending time "
-          "in a halfway house?\n"
-          "1: That, perversely, it is often more fun to want something than to have it\n"
-          "2: That you cannot win all of the time \n"
-          "3: That everybody is identical in their secret, unspoken belief that way deep down, they are \n"
-          "different from everyone else\n"
-          "4: That certain persons simply will not like you, no matter what you do\n"
-          "That there is such a thing as raw, unalloyed, agendaless kindness")
+    #
+    # print("Which of the following, In infinite Jest, is not something you would learn from spending time "
+    #       "in a halfway house?\n"
+    #       "1: That, perversely, it is often more fun to want something than to have it\n"
+    #       "2: That you cannot win all of the time \n"
+    #       "3: That everybody is identical in their secret, unspoken belief that way deep down, they are \n"
+    #       "different from everyone else\n"
+    #       "4: That certain persons simply will not like you, no matter what you do\n"
+    #       "That there is such a thing as raw, unalloyed, agendaless kindness")
 
     try:
-        answer = int(input("Choose your answer little one"))
+        answer = int(input("Which of the following, In infinite Jest, is not something you would learn from "
+                           "spending time in a halfway house?\n "                     
+                            "1: That, perversely, it is often more fun to want something than to have it\n"
+                            "2: That you cannot win all of the time \n"
+                            "3: That everybody is identical in their secret, unspoken belief that way"
+                            "deep down, they are \n"
+                            "different from everyone else\n"
+                            "4: That certain persons simply will not like you, no matter what you do\n"
+                            "That there is such a thing as raw, unalloyed, agendaless kindness \n"
+                            "Choose your answer little one"))
     except ValueError:
         print("You did not chose an answer in range, game over")
         character["Current HP"] = 0
