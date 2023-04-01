@@ -5,13 +5,24 @@ Implement the guessing game @done
 Implement the boss battle @done
 
 
+ABDO DONT FORGET TO PLAY AARDWOLF
+
+From assignment sheet:
+
+- update character to start at level 1 per chris instrucion @done
+- we need to name the level ... im not 100% sure what this means... maybe what you were talking about as opposed to 1, 2 3?
+- Check 4c of the assignment sheet - do you think the knowledge thing covers that? I can ask today
+- hmmm we should maybe put a tuple in somehwere... not sure where
+- use of membership operator? waht's this?
+- we need to use itertools somewhere
+- we need to format output with f strings
 
 
 
 
 
 Add function annotations @done
-Review docstrings
+Review docstrings - let's do this together
 conduct doctests
 Implement Unit tests - mainly done except for I think check_final_boss
  - move_character @done
