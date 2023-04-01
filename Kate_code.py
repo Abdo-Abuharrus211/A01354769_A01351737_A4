@@ -17,21 +17,16 @@ def guessing_game(character: dict):
     :precondition character: all dictionary values must be integers
     :postcondition: update to character dictionary if appropriate
     """
-
-    # TODO: Kate's question guessing game, troubleshoot and fix together consulting Chris
-    # Once matter is resolved, then can work together on this. Refer to the flowchart and game diagram
-
     player_level = character["Knowledge"]
-    if player_level == 1:
+    if player_level == "Novice":
         current_dictionary = questions_level_1
         pass
-    elif player_level == 2:
+    elif player_level == "Bookworm":
         current_dictionary = questions_level_2
         pass
     else:
         current_dictionary = questions_level_3
 
-    # current_dictionary = (f"questions_level_{player_level:.0f}").format(player_level)  # What's this doing?
     question = random.choice(list(current_dictionary))
     print(make_enemy())
     # print("You have met an enemy who wants to ask you a question!\n", question)
@@ -60,9 +55,9 @@ def check_for_final_boss(character: dict) -> bool:
     :postcondition: generates random integer in a specific range then check if it's equal or greater than 25%
     :return: True if there's a 20% or more chance of facing a foe, return False otherwise
     """
-    if character["Current XP"] >= 400:
+    random_chance = random.randint(1, 10) <= 4
+    if character["Current XP"] >= 400 and random_chance:
         return True
-        # return random.randint(1, 10) <= 2
     else:
         return False
 

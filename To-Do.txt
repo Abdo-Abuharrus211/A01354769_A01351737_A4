@@ -9,17 +9,16 @@ ABDO DONT FORGET TO PLAY AARDWOLF
 
 From assignment sheet:
 
-- update character to start at level 1 per chris instrucion @done
+- update character to start at level 1 per chris instruction @done
 - we need to name the level ... im not 100% sure what this means... maybe what you were talking about as opposed to 1, 2 3?
 - Check 4c of the assignment sheet - do you think the knowledge thing covers that? I can ask today
-- hmmm we should maybe put a tuple in somehwere... not sure where
-- use of membership operator? waht's this?
-- we need to use itertools somewhere
-- we need to format output with f strings
-- do you have any knowledge on GUI? if it's a kinda easy to implement and we have time we can... I think he said
-there might be bonus marks... tbc. What do you think? If it's hella effort then fuck it though
+- hmm we should maybe put a tuple in somehwere... not sure where
+- use of membership operator? what's this?
+- we need to use itertools somewhere -> Make board
+- we need to format output with f strings @Done
 
-
+- do you have any knowledge on GUI? if it's a kinda easy to implement, and we have time we can... I think he said
+  there might be bonus marks... tbc. What do you think? If it's hella effort then fuck it though
 
 
 
