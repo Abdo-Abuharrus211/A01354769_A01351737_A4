@@ -11,6 +11,7 @@ def describe_current_location(board: dict, character: dict):
     :param character: dictionary representing player's character stats, current location and HP
     :precondition: board and character are dictionaries and not None types
     :postcondition: obtains player's current location to acquire room's description from board and prints it
+
     >>> board_one = {(0, 0): "Potato", (0,1): "Pie", (1, 0): "Cheese", (1,1): "Burger"}
     >>> character_one = {"X-coordinate": 1, "Y-coordinate": 1, "Current HP": 5}
     >>> describe_current_location(board_one, character_one)
@@ -40,6 +41,7 @@ def move_character(character: dict, direction: str):
     :param direction: a string for the direction to move the player towards
     :precondition: character is valid dictionary with character stats, and direction is a string of 'N','E','S', or 'W'
     :postcondition: updates character's coordinates correctly according to direction the player moves in
+
      >>> character_one = {"X-coordinate": 0, "Y-coordinate": 0, "Current HP": 5}
      >>> direction_one = "S"
      >>> move_character(character_one, direction_one)

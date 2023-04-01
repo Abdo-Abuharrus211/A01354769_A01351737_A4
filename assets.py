@@ -106,6 +106,7 @@ def make_board(rows: int, columns: int) -> dict:
     :postcondition: creates a dictionary that defines the map of the game
     :raise ValueError: raises ValueError if either row or column input is not an integer greater than 2
     :return: dictionary of the map for the game
+
     """
     if rows != 10 or columns != 10:
         raise ValueError("Rows and columns must both be 10")

@@ -54,6 +54,7 @@ def check_for_foes() -> bool:
 
     :postcondition: generates random integer in a specific range then check if it's equal or greater than 25%
     :return: True if there's a 30% or more chance of facing a foe, return False otherwise
+    #TODO NOT SURE ABOUT THE WORDING OF THIS DOCSTRING
 
     """
     return random.randint(1, 6) <= 2
