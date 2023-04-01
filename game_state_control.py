@@ -95,25 +95,25 @@ def level_up(character: dict):
     >>> bob={"X-coordinate": 0, "Y-coordinate": 0, "Current HP": 7, "Current XP": 50, "Knowledge": 1}
     >>> level_up(bob)
     >>> print(bob)
-    {'X-coordinate': 0, 'Y-coordinate': 0, 'Current HP': 7, 'Current XP': 50, 'Knowledge': 0}
-    >>> ellie={"X-coordinate": 0, "Y-coordinate": 0, "Current HP": 7, "Current XP": 101, "Knowledge": 0}
+    {'X-coordinate': 0, 'Y-coordinate': 0, 'Current HP': 7, 'Current XP': 50, 'Knowledge': 1}
+    >>> ellie={"X-coordinate": 0, "Y-coordinate": 0, "Current HP": 7, "Current XP": 101, "Knowledge": 1}
     >>> level_up(ellie)
     >>> print(ellie)
-    {'X-coordinate': 0, 'Y-coordinate': 0, 'Current HP': 7, 'Current XP': 101, 'Knowledge': 1}
-    >>> sam={"X-coordinate": 0, "Y-coordinate": 0, "Current HP": 7, "Current XP": 312, "Knowledge": 0}
+    {'X-coordinate': 0, 'Y-coordinate': 0, 'Current HP': 7, 'Current XP': 101, 'Knowledge': 2}
+    >>> sam={"X-coordinate": 0, "Y-coordinate": 0, "Current HP": 7, "Current XP": 289, "Knowledge": 0}
     >>> level_up(sam)
     >>> print(sam)
-    {'X-coordinate': 0, 'Y-coordinate': 0, 'Current HP': 7, 'Current XP': 312, 'Knowledge': 3}
+    {'X-coordinate': 0, 'Y-coordinate': 0, 'Current HP': 7, 'Current XP': 289, 'Knowledge': 3}
 
     """
     # TODO: when everything's done, switch to named levels like below
     # as in every 100XP earned Knowledge level is bumped up.
     # Also, how about instead of level 1, 2, 3 we can have "Novice", "Bookworm", and "Master Custodian" ?
-    if 100 <= character["Current XP"] < 200:
+    if 0 <= character["Current XP"] < 100:
         character["Knowledge"] = 1
+    elif 100 <= character["Current XP"] < 200:
+        character["Knowledge"] = 2
     elif 200 <= character["Current XP"] < 300:
-        character["Current XP"] = 2
-    elif 300 <= character["Current XP"] < 400:
         character["Knowledge"] = 3
 
 
