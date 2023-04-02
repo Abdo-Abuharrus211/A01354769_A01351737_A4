@@ -2,7 +2,7 @@ import io
 from unittest import TestCase
 from unittest.mock import patch
 
-from Kate_code import final_boss
+from user_io import final_boss
 
 
 class TestGuessingGame(TestCase):

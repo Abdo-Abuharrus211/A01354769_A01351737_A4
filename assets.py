@@ -123,9 +123,9 @@ def make_character() -> dict:
     :postcondition: creates dictionary with character attributes
     :return: dictionary with character attributes
     >>> make_character()
-    {'X-coordinate': 0, 'Y-coordinate': 0, 'Current HP': 7, 'Current XP': 0, 'Knowledge': 0}
+    {'X-coordinate': 0, 'Y-coordinate': 0, 'Current HP': 20, 'Current XP': 0, 'Knowledge': 1}
     """
-    player = {"X-coordinate": 0, "Y-coordinate": 0, "Current HP": 7, "Current XP": 360, "Knowledge": 1}
+    player = {"X-coordinate": 0, "Y-coordinate": 0, "Current HP": 20, "Current XP": 0, "Knowledge": 1}
     return player
 
 

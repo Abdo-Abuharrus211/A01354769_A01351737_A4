@@ -92,29 +92,39 @@ def level_up(character: dict):
     :precondition character: must be a dictionary of character attributes
                              containing string keys X-coordinate, Y-coordinate, current HP, current XP and Knowledge
     :postcondition: update Knowledge if appropriate based on current XP
-    >>> bob={"X-coordinate": 0, "Y-coordinate": 0, "Current HP": 7, "Current XP": 50, "Knowledge": 1}
+    >>> bob={"X-coordinate": 0, "Y-coordinate": 0, "Current HP": 7, "Current XP": 50, "Knowledge": ""}
     >>> level_up(bob)
     >>> print(bob)
-    {'X-coordinate': 0, 'Y-coordinate': 0, 'Current HP': 7, 'Current XP': 50, 'Knowledge': 0}
-    >>> ellie={"X-coordinate": 0, "Y-coordinate": 0, "Current HP": 7, "Current XP": 101, "Knowledge": 0}
+    {'X-coordinate': 0, 'Y-coordinate': 0, 'Current HP': 7, 'Current XP': 50, 'Knowledge': 'Novice'}
+    >>> ellie={"X-coordinate": 0, "Y-coordinate": 0, "Current HP": 7, "Current XP": 101, "Knowledge": "Novice"}
     >>> level_up(ellie)
     >>> print(ellie)
-    {'X-coordinate': 0, 'Y-coordinate': 0, 'Current HP': 7, 'Current XP': 101, 'Knowledge': 1}
-    >>> sam={"X-coordinate": 0, "Y-coordinate": 0, "Current HP": 7, "Current XP": 312, "Knowledge": 0}
+    {'X-coordinate': 0, 'Y-coordinate': 0, 'Current HP': 7, 'Current XP': 101, 'Knowledge': 'Bookworm'}
+    >>> sam={"X-coordinate": 0, "Y-coordinate": 0, "Current HP": 7, "Current XP": 289, "Knowledge": "Bookworm"}
     >>> level_up(sam)
     >>> print(sam)
-    {'X-coordinate': 0, 'Y-coordinate': 0, 'Current HP': 7, 'Current XP': 312, 'Knowledge': 3}
-
+    {'X-coordinate': 0, 'Y-coordinate': 0, 'Current HP': 7, 'Current XP': 289, 'Knowledge': 'Master Custodian'}
     """
-    # TODO: when everything's done, switch to named levels like below
-    # as in every 100XP earned Knowledge level is bumped up.
-    # Also, how about instead of level 1, 2, 3 we can have "Novice", "Bookworm", and "Master Custodian" ?
-    if 100 <= character["Current XP"] < 200:
-        character["Knowledge"] = 1
+    if 0 <= character["Current XP"] < 100:
+        character["Knowledge"] = "Novice"
+    elif 100 <= character["Current XP"] < 200:
+        character["Knowledge"] = "Bookworm"
     elif 200 <= character["Current XP"] < 300:
-        character["Current XP"] = 2
-    elif 300 <= character["Current XP"] < 400:
-        character["Knowledge"] = 3
+        character["Knowledge"] = "Master Custodian"
+
+
+def check_for_final_boss(character: dict) -> bool:
+    """
+    Determine if there's a 20% chance to face and fight a foe to fight by generating a random integer.
+
+    :postcondition: generates random integer in a specific range then check if it's equal or greater than 25%
+    :return: True if there's a 20% or more chance of facing a foe, return False otherwise
+    """
+    random_chance = random.randint(1, 10) <= 4
+    if character["Current XP"] >= 400 and random_chance:
+        return True
+    else:
+        return False
 
 
 def main():
