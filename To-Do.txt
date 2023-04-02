@@ -9,10 +9,10 @@ ABDO DONT FORGET TO PLAY AARDWOLF
 
 From assignment sheet:
 
-- Check 4c of the assignment sheet - do you think the knowledge thing covers that? I can ask today
-- hmm we should maybe put a tuple in somehwere... not sure where
-- use of membership operator? what's this?
-- we need to use itertools somewhere -> Make board
+- Check 4c of the assignment sheet - do you think the knowledge thing covers that? I can ask today @done
+- hmm we should maybe put a tuple in somehwere... not sure where @done
+- use of membership operator? what's this? @done
+- we need to use itertools somewhere -> Make board @done
 
 - do you have any knowledge on GUI? if it's a kinda easy to implement, and we have time we can... I think he said
   there might be bonus marks... tbc. What do you think? If it's hella effort then fuck it though
@@ -25,13 +25,13 @@ conduct doctests
 Implement Unit tests - mainly done except for I think check_final_boss
  - move_character @done
  - create character
- - create board - can we call another function within the make board (ie make description?) I think it has to be stand
-                alone no? Not sure how to unit test this - the error ones are done though
+ - create board -not sure how to unit test this one
  - make_description
  - make_enemy
  - check_for_foes @done
  - dead_yet @done
 -  level_up
+- validate_move
  - check_final_boss - I don't want to touch this one coz it's linked in with how you have the game play flow but
                         is there the chance built into this or only XP?
  - final_boss @done
