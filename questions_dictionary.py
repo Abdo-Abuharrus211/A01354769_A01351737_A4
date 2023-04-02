@@ -24,7 +24,7 @@ questions_level_2 = {"What are the main characters in Never Let Me Go? "
                      "When the Body Says no (by Canadian doctor Gabor Mate) main message is: "
                      "\n 1: Always listen to your gut\n 2: If you don't rest you will get tired\n 3: If you don't "
                      "look after your mental health, your physical health will suffer \n 4: Drugs are bad \n "
-                     "5: XXXXX": 2,
+                     "5: Don't work out when you are tired": 2,
                      "Marching Powder is set in:"
                      "\n 1: Colombia \n 2: Bolivia\n 3: Mexico \n 4: Peru \n 5: Panama": 2,
                      "What is a supposedly fun thing that David Foster Wallace will never do again?"
@@ -46,16 +46,19 @@ questions_level_3 = {"What is NOT presented as true in Breathe by James Nestor"
                      "3: Having out-breath SHORTER than in-breath lowers anxiety \n 4: Importance of breathe is highly "
                      "underrated"
                      "  \n 5: Most people are over-breathers (too fast and too shallow": 3,
-                     "What movie actually complements the book really well (subjective but also definitely a correct "
+                     "What movie / show actually complements the book really well "
+                     "(subjective but also definitely a correct "
                      "answer :P) "
-                     "\n 1: Cloud Atlas\n 2: Tomorrow When the War Began\n 3: ??? \n 4: ??? \n 5: ???": 1,
+                     "\n 1: Cloud Atlas\n 2: Tomorrow When the War Began\n 3: The Hobbit \n 4: Hunger Games"
+                     "Lord of the Rings \n 5: Rings of Power": 1,
                      "Which Haruki Murakmi novel has no fantasy elements"
                      "\n 1: Hard Boiled Wonderland and the Edge of The World\n 2: Kafka on the Shore"
                      "\n 3: Wild Sheep Chase \n 4: Wind up Bird Chronicle \n 5: Norwegian Wood": 5,
                      "What is the phenomenon called where 'those places ... where all the different kinds of truths fit"
                      " together \n"
                      "in Sirens of Titan "
-                     "\n 1: ???\n 2: ???\n 3: ??? \n 4: Tralfamadorian \n 5: chrono-synclastic infundibulum": 5,
+                     "\n 1: Gravimetric vortisphere \n 2: Neomagnonic resonator \n 3: Hyperchronic quasiplexus "
+                     "\n 4: Tralfamadorian \n 5: chrono-synclastic infundibulum": 5,
                      "What is the message of The Pearl (John Steinbeck) "
                      "\n 1: Wealth can be a curse\n 2: Love conquers all\n 3: Once bitten twice shy \n 4: Don't put"
                      "all your eggs in one basket \n 5: ???": 1,
