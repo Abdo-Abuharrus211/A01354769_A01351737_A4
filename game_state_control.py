@@ -6,7 +6,8 @@ import random
 
 def validate_move(board: dict, character: dict, direction: str) -> bool:
     """
-    Determine if moving in given direction is permitted and within the board's bounds.
+    Validate chosen direction.
+    This functions determines if moving in given direction is permitted and within the board's bounds.
 
     :param board: dictionary representing the game board's rooms, with (x,y) coordinates as keys and string values.
     :param character: dictionary representing player's character stats, current location and HP
@@ -16,17 +17,17 @@ def validate_move(board: dict, character: dict, direction: str) -> bool:
     :return: True if moving in player's desired direction is still within bounds, return False otherwise
     :raises KeyError: if moving in a direction leads out of bounds
 
-     >>> board_one = {(0, 0): "Potato", (0,1): "Pie", (1, 0): "Cheese", (1,1): "Burger"}
+     >>> board_one = {(0, 0): "Potato", (0, 1): "Pie", (1, 0): "Cheese", (1, 1): "Burger"}
      >>> character_one = {"X-coordinate": 0, "Y-coordinate": 0, "Current HP": 5}
      >>> direction_one = "S"
      >>> validate_move(board_one, character_one, direction_one)
      True
-     >>> board_two = {(0, 0): "Potato", (1,0): "Pie"}
+     >>> board_two = {(0, 0): "Potato", (1, 0): "Pie"}
      >>> character_two = {"X-coordinate": 0 , "Y-coordinate": 0, "Current HP": 5}
      >>> direction_two = "E"
      >>> validate_move(board_two, character_two, direction_two)
      True
-     >>> board_three = {(0, 0): "Potato", (0,1): "Pie", (1, 0): "Cheese", (1,1): "Burger"}
+     >>> board_three = {(0, 0): "Potato", (0, 1): "Pie", (1, 0): "Cheese", (1, 1): "Burger"}
      >>> character_three = {"X-coordinate": 1 , "Y-coordinate": 1, "Current HP": 5}
      >>> direction_three = "N"
      >>> validate_move(board_three, character_three, direction_three)
