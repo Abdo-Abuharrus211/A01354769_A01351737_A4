@@ -31,7 +31,7 @@ Implement Unit tests - mainly done except for I think check_final_boss
  - check_for_foes @done
  - dead_yet @done
 -  level_up
-- validate_move
+- validate_move @done
  - check_final_boss - I don't want to touch this one coz it's linked in with how you have the game play flow but
                         is there the chance built into this or only XP?
  - final_boss @done
