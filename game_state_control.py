@@ -41,8 +41,8 @@ def validate_move(board: dict, character: dict, direction: str) -> bool:
     elif direction == "W" and 0 <= character["X-coordinate"] - 1:
         valid_move = True
     else:
-        raise KeyError("You mustn't leave the bookshop, little one. You're too vulnerable to venture beyond the "
-                       "territory of books.")
+        raise KeyError("Ah! You cannot go that way! You mustn't leave the bookshop, little one. You're too vulnerable "
+                       "to venture beyond the territory of books.")
     return valid_move
 
 
@@ -109,8 +109,10 @@ def level_up(character: dict):
         character["Knowledge"] = "Novice"
     elif 100 <= character["Current XP"] < 200:
         character["Knowledge"] = "Bookworm"
+        print("You have upgraded from Novice reader to Bookworm! Keep going!")
     elif 200 <= character["Current XP"] < 300:
         character["Knowledge"] = "Master Custodian"
+        print("You have upgraded from Novice reader to Bookworm! Keep going!")
 
 
 def check_for_final_boss(character: dict) -> bool:
