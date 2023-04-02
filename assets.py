@@ -3,6 +3,7 @@ Asset creation module
 """
 
 import random
+import itertools
 
 
 def make_description() -> str:
@@ -99,19 +100,22 @@ def make_board(rows: int, columns: int) -> dict:
     """
     Create the game space.
 
-    :param rows: integer greater than 2
-    :param columns: integer greater than 2
-    :precondition rows: must be an integer greater than 2
-    :precondition columns: must be an integer greater than 2
+    :param rows: integer 10
+    :param columns: integer 10
+    :precondition rows: must be an integer = 10
+    :precondition columns: must be an integer = 10
     :postcondition: creates a dictionary that defines the map of the game
-    :raise ValueError: raises ValueError if either row or column input is not an integer greater than 2
+    :raise ValueError: raises ValueError if either row or column input is not integer = 10
     :return: dictionary of the map for the game
 
     """
     if rows != 10 or columns != 10:
         raise ValueError("Rows and columns must both be 10")
     else:
-        game_board = {(row, column): make_description() for row in range(rows) for column in range(columns)}
+        game_board_coords = {number for number in itertools.product(list(range(rows)), repeat=2)}
+        game_board = {}
+        for item in game_board_coords:
+            game_board[item] = make_description()
         return game_board
 
 
