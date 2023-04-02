@@ -20,9 +20,6 @@ From assignment sheet:
 there might be bonus marks... tbc. What do you think? If it's hella effort then fuck it though
 
 
-
-
-
 Add function annotations @done
 Review docstrings - let's do this together
 conduct doctests
