@@ -13,7 +13,7 @@ def get_user_choice() -> str:
     :precondition: player must only enter 'N','E','S', or 'W' directions when prompted
     :postcondition: receives player's input and assigns it to a variable, and raises error if player misbehaves
     :return: a string for the direction the player wishes to move towards
-    :raises ValueError: if player enters anything besides 'N','E','S', or 'W'
+    :raises ValueError: if player enters anything besides 'N','E','S', or 'W""
     """
     accepted_directions = ("N", "E", "S", "W")
     directions_dict = {"N": "North", "E": "East", "S": "South", "W": "West"}
@@ -34,6 +34,28 @@ def get_user_choice() -> str:
     return player_movement
 
 
+def get_question(character: dict):
+    """
+    Get the question and answer for enemy quiz
+
+    This function will get a random question and correct answer from the appropriate dictionary based on character Level
+    :param character:
+    :return:
+    """
+    player_level = character["Knowledge"]
+    if player_level == "Novice":
+        current_dictionary = questions_level_1
+    elif player_level == "Bookworm":
+        current_dictionary = questions_level_2
+    else:
+        current_dictionary = questions_level_3
+    question = random.choice(list(current_dictionary))
+    real_answer = current_dictionary[question]
+    print(make_enemy())
+    print("You must answer the question to persevere! \n", question)
+    return real_answer
+
+
 def guessing_game(character: dict):
     """
     Play a guessing game
@@ -47,20 +69,7 @@ def guessing_game(character: dict):
     :precondition character: all dictionary values must be integers
     :postcondition: update to character dictionary if appropriate
     """
-    player_level = character["Knowledge"]
-    if player_level == "Novice":
-        current_dictionary = questions_level_1
-        pass
-    elif player_level == "Bookworm":
-        current_dictionary = questions_level_2
-        pass
-    else:
-        current_dictionary = questions_level_3
-
-    question = random.choice(list(current_dictionary))
-    print(make_enemy())
-    # print("You have met an enemy who wants to ask you a question!\n", question)
-    print("You must answer the question to persevere! \n", question)
+    real_answer = get_question(character)
     try:
         answer = int(input("Choose your answer little one: "))
     except ValueError:
@@ -70,10 +79,10 @@ def guessing_game(character: dict):
         if answer < 1 or answer > 5:
             print("'Please pick a number between 1 and 5 inclusive, you lost 1 HP'")
             character["Current HP"] -= 1
-        elif answer == current_dictionary[question]:
+        elif answer == real_answer:
             character["Current XP"] += 20
             print("You may pass unharmed")
-        elif answer != current_dictionary[question]:
+        elif answer != real_answer:
             print("'Incorrect, 1 hit taken'")
             character["Current HP"] -= 1
 
