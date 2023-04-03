@@ -12,3 +12,13 @@ WELCOME_MESSAGE = "\nOh, you're finally awake. Don't be alarmed little one. I kn
 ENEMY_ENCOUNTER = "An enemy blocks our path and threatens our journey. We must battle them with knowledge!"
 
 SPACER = "==========================================================="
+
+LEVEL_ONE_REVELATION = ""
+
+LEVEL_TWO_REVELATION = ""
+
+LEVEL_THREE_REVELATION = ""
+
+ASCENSION_TIME = ""
+
+END = ""
