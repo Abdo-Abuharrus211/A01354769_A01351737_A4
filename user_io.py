@@ -38,7 +38,7 @@ def get_question(character: dict):
     """
     Get the question and answer for enemy quiz
 
-    This function will get a random question and correct answer from the appropriate dictionary based on character Level
+    This function will retrieve a random question and correct answer from the appropriate dictionary based on character Level
     :param character:
     :precondition:
     :return: the answer of the question
@@ -70,21 +70,30 @@ def guessing_game(character: dict):
     :postcondition: update to character dictionary if appropriate
     """
     real_answer = get_question(character)
+
+    # TODO: Had this Idea to increase char resistance
+    if character["Knowledge"] == "Master Custodian":
+        damage_inflicted = 5
+    elif character["Knowledge"] == "Bookworm":
+        damage_inflicted = 7
+    else:
+        damage_inflicted = 10
+
     try:
         answer = int(input("Choose your answer little one: "))
     except ValueError:
         print("'Please pick a number between 1 and 5 inclusive, you lost 1 HP'")
-        character["Current HP"] -= 1
+        character["Current HP"] -= damage_inflicted
     else:
         if answer < 1 or answer > 5:
             print("'Please pick a number between 1 and 5 inclusive, you lost 1 HP'")
-            character["Current HP"] -= 1
+            character["Current HP"] -= damage_inflicted
         elif answer == real_answer:
             character["Current XP"] += 20
             print("You may pass unharmed")
         elif answer != real_answer:
             print("'Incorrect, 1 hit taken'")
-            character["Current HP"] -= 1
+            character["Current HP"] -= damage_inflicted
 
 
 def final_boss(character: dict):
