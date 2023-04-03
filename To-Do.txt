@@ -22,8 +22,8 @@ Implement Unit tests - mainly done except for I think check_final_boss
  - move_character @done
  - make_character
  - make_board -not sure how to unit test this one
- - make_description
- - make_enemy
+ - make_description @done
+ - make_enemy @done
  - guessing_game
  - check_for_foes @done
  - get_user_choice @done
