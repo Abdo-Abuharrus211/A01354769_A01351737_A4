@@ -123,8 +123,8 @@ def check_for_final_boss(character: dict) -> bool:
     :postcondition: generates random integer in a specific range then check if it's equal or greater than 25%
     :return: True if there's a 20% or more chance of facing a foe, return False otherwise
     """
-    random_chance = random.randint(1, 10) <= 4
-    if character["Current XP"] >= 400 and random_chance:
+    random_chance = random.randint(1, 10) >= 4
+    if character["Current XP"] >= 300 and random_chance:
         return True
     else:
         return False
