@@ -16,6 +16,7 @@ From assignment sheet:
 - Finish Unit testing all functions (potentially import tests from my Lab 7)
 - Incorporate story elements
 - Revise ALL print statements
+- Write somewhat comprehensive list of features & mechanics in README
 
 
 Add function annotations @done
