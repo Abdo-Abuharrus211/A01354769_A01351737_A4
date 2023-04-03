@@ -40,7 +40,8 @@ def get_question(character: dict):
 
     This function will get a random question and correct answer from the appropriate dictionary based on character Level
     :param character:
-    :return:
+    :precondition:
+    :return: the answer of the question
     """
     player_level = character["Knowledge"]
     if player_level == "Novice":
@@ -51,8 +52,7 @@ def get_question(character: dict):
         current_dictionary = questions_level_3
     question = random.choice(list(current_dictionary))
     real_answer = current_dictionary[question]
-    print(make_enemy())
-    print("You must answer the question to persevere! \n", question)
+    print(make_enemy(), "You must answer the question to persevere! \n", question)
     return real_answer
 
 
