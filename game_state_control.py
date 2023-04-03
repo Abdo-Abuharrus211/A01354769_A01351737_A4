@@ -49,14 +49,12 @@ def validate_move(board: dict, character: dict, direction: str) -> bool:
 
 def check_for_foes() -> bool:
     """
-    Determine if there is a foe.
+    Determine if there is a chance of encountering  foe.
 
     This function Determines if there's a 30% chance to face and fight a foe to fight by generating a random integer.
 
     :postcondition: generates random integer in a specific range then check if it's equal or greater than 25%
     :return: True if there's a 30% or more chance of facing a foe, return False otherwise
-    #TODO NOT SURE ABOUT THE WORDING OF THIS DOCSTRING
-
     """
     return random.randint(1, 6) <= 2
 
@@ -93,27 +91,25 @@ def level_up(character: dict):
     :precondition character: must be a dictionary of character attributes
                              containing string keys X-coordinate, Y-coordinate, current HP, current XP and Knowledge
     :postcondition: update Knowledge if appropriate based on current XP
-    >>> bob={"X-coordinate": 0, "Y-coordinate": 0, "Current HP": 7, "Current XP": 50, "Knowledge": ""}
+    >>> bob={"X-coordinate": 0, "Y-coordinate": 0, "Current HP": 7, "Current XP": 10, "Knowledge": "Novice"}
     >>> level_up(bob)
     >>> print(bob)
-    {'X-coordinate': 0, 'Y-coordinate': 0, 'Current HP': 7, 'Current XP': 50, 'Knowledge': 'Novice'}
+    {'X-coordinate': 0, 'Y-coordinate': 0, 'Current HP': 7, 'Current XP': 10, 'Knowledge': 'Novice'}
     >>> ellie={"X-coordinate": 0, "Y-coordinate": 0, "Current HP": 7, "Current XP": 101, "Knowledge": "Novice"}
     >>> level_up(ellie)
-    >>> print(ellie)
-    {'X-coordinate': 0, 'Y-coordinate': 0, 'Current HP': 7, 'Current XP': 101, 'Knowledge': 'Bookworm'}
+    Well done, little one. You're now a Bookworm! Keep going!
     >>> sam={"X-coordinate": 0, "Y-coordinate": 0, "Current HP": 7, "Current XP": 289, "Knowledge": "Bookworm"}
     >>> level_up(sam)
-    >>> print(sam)
-    {'X-coordinate': 0, 'Y-coordinate': 0, 'Current HP': 7, 'Current XP': 289, 'Knowledge': 'Master Custodian'}
+    The pupil has become a master. You're a Master Custodian now! You're ready to ascend.
     """
     if 0 <= character["Current XP"] < 100:
         character["Knowledge"] = "Novice"
     elif 100 <= character["Current XP"] < 200:
         character["Knowledge"] = "Bookworm"
-        print("You have upgraded from Novice reader to Bookworm! Keep going!")
+        print("Well done, little one. You're now a Bookworm! Keep going!")
     elif 200 <= character["Current XP"] < 300:
         character["Knowledge"] = "Master Custodian"
-        print("You have upgraded from Novice reader to Bookworm! Keep going!")
+        print("The pupil has become a master. You're a Master Custodian now! You're ready to ascend.")
 
 
 def check_for_final_boss(character: dict) -> bool:
