@@ -18,7 +18,7 @@ From assignment sheet:
 Add function annotations @done
 Review docstrings - let's do this together
 conduct doctests
-Implement Unit tests - mainly done except for I think check_final_boss
+Implement Unit tests -
  - move_character @done
  - make_character
  - make_board -not sure how to unit test this one
