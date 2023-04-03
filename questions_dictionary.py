@@ -5,13 +5,14 @@ questions_level_1 = {"Shantaram (by Australian escaped criminal Gregory David Ro
                      "What is the answer to the meaning of life according to Hitchhikers Guide to the Galaxy? "
                      "\n 1: 100\n 2: 420\n 3: 42 \n 4: 1 \n 5: Infinity": 3,
                      "Which of the following is not a book by Malcolm Gladwell:"
-                     "\n 1: Outwitting the Devil \n: The Tipping Point \n: Outliers \n: Talking to Strangers \n: "
+                     "\n 1: Outwitting the Devil \n 2: The Tipping Point \n 3: Outliers \n 4: Talking to "
+                     "Strangers \n 5:"
                      "Blink": 1,
                      "Which book is the shortest? "
                      "\n 1: Animal Farm \n 2: 1984\n 3: Lord of the Flies \n 4: Clockwork Orange \n 5: Catch 22": 1,
                      "The TV show 'Big Brother' is based on the all-seeing entity from which book:"
-                     "\n 1: To kill a Mockingbird \n: Da Vinci Code \n: Twenty Thousand Legues Under the Sea \n: "
-                     "After the Cure \n: 1984": 5,
+                     "\n 1: To kill a Mockingbird \n 2: Da Vinci Code \n 3: Twenty Thousand Legues Under the Sea \n 4: "
+                     "After the Cure \n 5: 1984": 5,
                      "What group of people are not researched / interviewed in Far from The Tree"
                      "\n 1: Criminals \n 2: Blind\n 3: Autistic \n 4: Genius \n 5: Little people": 2
 
