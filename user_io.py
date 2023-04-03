@@ -71,7 +71,7 @@ def guessing_game(character: dict):
     """
     real_answer = get_question(character)
 
-    # TODO: Had this Idea to increase char resistance
+    # TODO: [Abdo] I had this Idea to increase char resistance...
     if character["Knowledge"] == "Master Custodian":
         damage_inflicted = 5
     elif character["Knowledge"] == "Bookworm":
