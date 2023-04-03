@@ -24,11 +24,14 @@ Review docstrings - let's do this together
 conduct doctests
 Implement Unit tests - mainly done except for I think check_final_boss
  - move_character @done
- - create character
- - create board -not sure how to unit test this one
+ - make_character
+ - make_board -not sure how to unit test this one
  - make_description
  - make_enemy
+ - guessing_game
  - check_for_foes @done
+ - get_user_choice @done
+ - describe_current_location
  - dead_yet @done
 -  level_up
 - validate_move @done
