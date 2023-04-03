@@ -3,6 +3,7 @@
 """
 import random
 from assets import make_enemy
+from game_state_control import damage_received
 from questions_dictionary import questions_level_1, questions_level_2, questions_level_3
 
 
@@ -71,29 +72,21 @@ def guessing_game(character: dict):
     """
     real_answer = get_question(character)
 
-    # TODO: [Abdo] I had this Idea to increase char resistance...
-    if character["Knowledge"] == "Master Custodian":
-        damage_inflicted = 5
-    elif character["Knowledge"] == "Bookworm":
-        damage_inflicted = 7
-    else:
-        damage_inflicted = 10
-
     try:
         answer = int(input("Choose your answer little one: "))
     except ValueError:
         print("'Please pick a number between 1 and 5 inclusive, you lost 1 HP'")
-        character["Current HP"] -= damage_inflicted
+        character["Current HP"] -= damage_received(character)
     else:
         if answer < 1 or answer > 5:
             print("'Please pick a number between 1 and 5 inclusive, you lost 1 HP'")
-            character["Current HP"] -= damage_inflicted
+            character["Current HP"] -= damage_received(character)
         elif answer == real_answer:
             character["Current XP"] += 20
             print("You may pass unharmed")
         elif answer != real_answer:
             print("'Incorrect, 1 hit taken'")
-            character["Current HP"] -= damage_inflicted
+            character["Current HP"] -= damage_received(character)
 
 
 def final_boss(character: dict):

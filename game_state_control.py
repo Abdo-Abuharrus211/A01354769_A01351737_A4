@@ -80,6 +80,29 @@ def dead_yet(character: dict) -> dict:
     return character["Current HP"] == 0
 
 
+def damage_received(character):
+    """
+    Adjust damage received based on character's level.
+
+    A function that adjusts the amount of damage inflicted when attacked to mirror character resistance gains
+    :param character:
+    :return:
+    >>> bob = {"X-coordinate": 0, "Y-coordinate": 0, "Current HP": 7, "Current XP": 10, "Knowledge": "Novice"}
+    >>> damage_received(bob)
+    10
+    >>> chad = {"X-coordinate": 0, "Y-coordinate": 0, "Current HP": 7, "Current XP": 111, "Knowledge": "Bookworm"}
+    >>> damage_received(chad)
+    7
+    """
+    if character["Knowledge"] == "Master Custodian":
+        damage_inflicted = 5
+    elif character["Knowledge"] == "Bookworm":
+        damage_inflicted = 7
+    else:
+        damage_inflicted = 10
+    return damage_inflicted
+
+
 def level_up(character: dict):
     """
     Increase the character's knowledge level if they reach the level up threshold.
