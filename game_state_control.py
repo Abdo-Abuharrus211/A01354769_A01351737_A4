@@ -95,9 +95,9 @@ def damage_received(character):
     7
     """
     if character["Knowledge"] == "Master Custodian":
-        damage_inflicted = 5
+        damage_inflicted = 3
     elif character["Knowledge"] == "Bookworm":
-        damage_inflicted = 7
+        damage_inflicted = 5
     else:
         damage_inflicted = 10
     return damage_inflicted

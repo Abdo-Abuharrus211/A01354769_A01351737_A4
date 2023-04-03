@@ -13,6 +13,8 @@ From assignment sheet:
 - hmm we should maybe put a tuple in somewhere... not sure where @done
 - use of membership operator? what's this? @done
 - we need to use itertools somewhere -> Make board @done
+
+- Refactor guessing game into separate module including two inner functions and dictionaries
 - Finish Unit testing all functions (potentially import tests from my Lab 7)
 - Incorporate story elements
 - Revise ALL print statements
@@ -29,8 +31,10 @@ Implement Unit tests -
  - make_board -not sure how to unit test this one
  - make_description @done
  - make_enemy @done
- - guessing_game
- - get question
+
+ - guessing_game @delete
+ - get question @delete
+
  - check_for_foes @done
  - get_user_choice @done
  - describe_current_location
