@@ -51,7 +51,6 @@ def game():
             achieved_goal = True
         elif not game_state_control.dead_yet(character) and not check_for_final_boss(character):
             print("Our trek continues little one.")
-            print(check_for_final_boss(character))
         else:
             print("YOU DIED")
             break
