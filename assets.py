@@ -16,7 +16,7 @@ def make_description() -> str:
     :postcondition: generate random integer to index through a list and obtain a room description
     :return: a random string from the collection of strings
     """
-    # TODO: Add more room descriptions ~ 40-50
+
     room_descriptions = ("The dusty scrolls of the stacks howled with an eerie silence",
                          "It seems a family of jumping spiders are practicing parkour",
                          "The cozy room is filled with the warm glow of flickering candles, casting dancing shadows "
@@ -73,7 +73,6 @@ def make_enemy() -> str:
     :postcondition: generate random integer to index through a list and obtain an enemy description
     :return: a random string from the collection of strings
     """
-    # TODO: Add more enemy descriptions ~ 20
     enemy_descriptions = ("Look out, it's a warrior ant with ill intentions!",
                           "The Snail of Orwell demands a duel!",
                           "An Orb Weaver has blocked the path with its sticky web.",

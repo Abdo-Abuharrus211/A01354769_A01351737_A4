@@ -1,5 +1,5 @@
 """
-    This module is for functions controlling and checking the game's and other crucial control statements.
+This module is for functions controlling and checking the game's and other crucial control statements.
 """
 import random
 
