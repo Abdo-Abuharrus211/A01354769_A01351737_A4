@@ -32,7 +32,7 @@ Implement Unit tests -
  - make_description @done
  - make_enemy @done
 
- - guessing_game @delete
+ - guessing_game let's speak with Chris im getting super lose with this
  - get question @delete
 
  - check_for_foes @done

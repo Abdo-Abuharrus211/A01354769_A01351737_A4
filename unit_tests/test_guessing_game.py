@@ -2,13 +2,19 @@ import io
 from unittest import TestCase
 from unittest.mock import patch
 
-from user_io import guessing_game
+from guessing_game import guessing_game
 
 
 class TestGuessingGame(TestCase):
 
+    @patch('builtins.input', side_effect=["T"])
+    def test_guessing_game_value_error_letter(self, _):
+        with self.assertRaises(ValueError):
+            character = {'X-coordinate': 0, 'Y-coordinate': 0, 'Current HP': 5}
+            guessing_game(character)
+
     @patch('builtins.input', side_effect=[2])
-    def test_guessing_game_correct_print(self, mock_output, _):
+    def test_guessing_game_correct_print(self, _):
         character = {"Current HP": 4, "Knowledge": 2}
         guessing_game(character)
         test_real_answer = 2
