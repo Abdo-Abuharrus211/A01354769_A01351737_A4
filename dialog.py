@@ -22,13 +22,13 @@ LEVEL_THREE_REVELATION = "Your unwavering dedication to the preservation of know
                          "itle of Master Custodian. "
 
 ASCENSION_TIME = "Your unwavering dedication to the preservation of knowledge has earned you the esteemed title of " \
-                 "Master Custodian, dear Ornithoptera alexandrae. Your metamorphosis into a butterfly is a momentous\n" \
-                 " event, and you must ascend the lemon tree in the garden to complete your transformation into a \n" \
-                 "creature of unrivaled beauty. Your watchful eye will continue to safeguard the treasures of Bob's " \
-                 "Bookshop for generations to come."
+                 "Master Custodian, dear Ornithoptera alexandrae. Your metamorphosis into a butterfly is a \n" \
+                 "momentous event, and you must ascend the lemon tree in the garden to complete your transformation" \
+                 " into a \ncreature of unrivaled beauty. Your watchful eye will continue to safeguard the treasures " \
+                 "of Bob's Bookshop for generations to come."
 
 END = "Now that you, Cata, have vanquished Caraxes, it is time for you to ascend. As you make your way up \n the" \
       " lemon tree, feel the strength and beauty that comes with each step. You're an Ornithoptera alexandrae, " \
       "and are ready to cocoon on the perfect branch of the majestic Lemon Tree, ready to emerge as Bob's Bookshop's" \
-      " guardian angel.\n May your days as Cantarella be filled with the beauty and wonder of this world, and may your" \
-      " watchful eye continue to safeguard the treasures of this cozy rustic haven."
+      " guardian angel.\n May your days as Cantarella be filled with the beauty and wonder of this world,\n" \
+      "and may your watchful eye continue to safeguard the treasures of this cozy rustic haven."
