@@ -4,7 +4,7 @@
 import random
 from assets import make_enemy
 from game_state_control import damage_received
-from questions_dictionary import questions_level_1, questions_level_2, questions_level_3
+# from questions_dictionary import questions_level_1, questions_level_2, questions_level_3
 
 
 def get_user_choice() -> str:

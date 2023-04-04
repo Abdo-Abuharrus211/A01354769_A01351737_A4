@@ -3,6 +3,8 @@ This module is for functions controlling and checking the game's and other cruci
 """
 import random
 
+from dialog import LEVEL_TWO_REVELATION, SPACER
+
 
 def validate_move(board: dict, character: dict, direction: str) -> bool:
     """
@@ -129,10 +131,12 @@ def level_up(character: dict):
         character["Knowledge"] = "Novice"
     elif 100 <= character["Current XP"] < 200:
         character["Knowledge"] = "Bookworm"
-        print("Well done, little one. You're now a Bookworm! Keep going!")
+        print(LEVEL_TWO_REVELATION)
+        print(SPACER)
     elif 200 <= character["Current XP"] < 300:
         character["Knowledge"] = "Master Custodian"
         print("The pupil has become a master. You're a Master Custodian now! You're ready to ascend.")
+        print(SPACER)
 
 
 def check_for_final_boss(character: dict) -> bool:

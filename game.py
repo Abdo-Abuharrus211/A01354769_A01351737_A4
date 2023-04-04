@@ -1,10 +1,11 @@
 """
 Abdo & Kate make a game for A4
 """
-from user_io import get_user_choice, guessing_game, final_boss
+from guessing_game import guessing_game
+from user_io import get_user_choice, final_boss
 from game_state_control import check_for_final_boss
 from assets import make_board, make_character
-from dialog import SPACER
+from dialog import SPACER, ASCENSION_TIME
 
 import game_mechanics
 import game_state_control
@@ -44,7 +45,10 @@ def game():
             if there_is_a_challenger:
                 guessing_game(character)
             game_state_control.level_up(character)
-
+        if character["Knowledge"] == "Master Custodian":
+            print(SPACER)
+            print(ASCENSION_TIME)
+            print(SPACER)
         if not game_state_control.dead_yet(character) and check_for_final_boss(character):
             print("It's Caraxes the Python of the Courtyard!!!!")  # TODO: add drama here...
             final_boss(character)

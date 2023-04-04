@@ -2,7 +2,6 @@ import random
 
 from assets import make_enemy
 from game_state_control import damage_received
-from questions_dictionary import questions_level_1, questions_level_2, questions_level_3
 
 questions_level_1 = {"Shantaram (by Australian escaped criminal Gregory David Roberts)"
                      "is set in which country?\n 1: China\n 2: Indonesia\n 3: Japan \n 4: India \n 5: Nepal": 4,
@@ -86,7 +85,7 @@ def get_question(character: dict):
     """
     Get the question and answer for enemy quiz
 
-    This function will retrieve a random question and correct answer from the appropriate dictionary based on character Level
+    This function will get a random question & correct answer from the appropriate dictionary based on character Level's
     :param character:
     :precondition:
     :return: the answer of the question
