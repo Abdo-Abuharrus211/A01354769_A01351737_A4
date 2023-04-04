@@ -27,7 +27,7 @@ ASCENSION_TIME = "Your unwavering dedication to the preservation of knowledge ha
                  "creature of unrivaled beauty. Your watchful eye will continue to safeguard the treasures of Bob's " \
                  "Bookshop for generations to come."
 
-END = "Now that you, Cantarella, have vanquished Caraxes, it is time for you to ascend. As you make your way up \n the" \
+END = "Now that you, Cata, have vanquished Caraxes, it is time for you to ascend. As you make your way up \n the" \
       " lemon tree, feel the strength and beauty that comes with each step. You're an Ornithoptera alexandrae, " \
       "and are ready to cocoon on the perfect branch of the majestic Lemon Tree, ready to emerge as Bob's Bookshop's" \
       " guardian angel.\n May your days as Cantarella be filled with the beauty and wonder of this world, and may your" \

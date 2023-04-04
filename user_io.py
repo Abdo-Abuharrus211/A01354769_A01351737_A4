@@ -80,7 +80,7 @@ def final_boss(character: dict):
         elif answer == 2:
             print("Congratulations, you won!")
         elif answer != 2:
-            print("Incorrect, game over")
+            print("Incorrect, Caraxes has constricted the light out of you...I'm sorry little one")
             character["Current HP"] = 0
 
 

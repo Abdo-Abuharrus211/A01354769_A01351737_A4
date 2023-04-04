@@ -5,7 +5,7 @@ from guessing_game import guessing_game
 from user_io import get_user_choice, final_boss
 from game_state_control import check_for_final_boss
 from assets import make_board, make_character
-from dialog import SPACER, ASCENSION_TIME
+from dialog import SPACER, ASCENSION_TIME, END
 
 import game_mechanics
 import game_state_control
@@ -56,9 +56,10 @@ def game():
         elif not game_state_control.dead_yet(character) and not check_for_final_boss(character):
             print("Our trek continues little one.")
         else:
-            print("YOU DIED")
+            print("GAME OVER")
             break
-    print("\nThanks for playing.")
+    print(END)
+    print("Thanks for playing")
 
 
 def main():
