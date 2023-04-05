@@ -4,6 +4,8 @@
 import random
 from assets import make_enemy
 from game_state_control import damage_received
+
+
 # from questions_dictionary import questions_level_1, questions_level_2, questions_level_3
 
 
@@ -20,9 +22,7 @@ def get_user_choice() -> str:
     directions_dict = {"N": "North", "E": "East", "S": "South", "W": "West"}
     player_movement = ""
     need_direction = True
-
     while need_direction:
-
         if player_movement == "" or player_movement not in accepted_directions:
             player_movement = input(
                 "Which way would you like to go?\nRemember, your map scroll only accepts:\n"
