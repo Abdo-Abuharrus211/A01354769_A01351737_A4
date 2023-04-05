@@ -13,13 +13,15 @@ class TestGuessingGame(TestCase):
             character = {'X-coordinate': 0, 'Y-coordinate': 0, 'Current HP': 5}
             guessing_game(character)
 
-    @patch('builtins.input', side_effect=[2])
-    def test_guessing_game_correct_print(self, _):
-        character = {"Current HP": 4, "Knowledge": 2}
-        guessing_game(character)
-        test_real_answer = 2
-        expected_output = "You may pass unharmed\n"
-        self.assertEqual(expected_output, game_prints_this)
+        @patch('builtins.input', side_effect=[2])
+        @patch('guessing.game.get_question')
+        @patch('sys.stdout', new_callable=io.StringIO)
+        def test_guessing_game_correct_print(self, mock_output, _, __):
+            character = {"Current HP": 4, "Knowledge": 2}
+
+            guessing_game(character)
+            expected_output = "You may pass unharmed\n"
+            self.assertIn(expected_output, mock_output.getvalue())
 
     @patch('builtins.input', side_effect=[3])
     @patch('random.randint', return_value=2)
