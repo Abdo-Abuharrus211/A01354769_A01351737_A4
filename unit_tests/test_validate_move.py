@@ -4,6 +4,11 @@ from game_state_control import validate_move
 
 
 class TestValidateMove(TestCase):
+
+    def test_validate_move_exception_raised(self):
+        character_test = {"X-coordinate": 0, "Y-coordinate": 0, "Current HP": 7, "Current XP": 10}
+        with self.assertRaises(KeyError):
+            validate_move({(0, 0): "Potato", (0, 1): "Pie", (1, 0): "Cheese", (1, 1): "Burger"}, character_test, "N")
     def test_validate_move_south(self):
         self.assertEqual(True, validate_move({(0, 0): "Potato", (0, 1): "Pie", (1, 0): "Cheese", (1, 1): "Burger"},
         {"X-coordinate": 0, "Y-coordinate": 0, "Current HP": 5}, "S"))
