@@ -70,13 +70,13 @@ def dead_yet(character: dict) -> dict:
     :precondition: character is valid dictionary containing character's stats and not None type
     :postcondition: checks if character's HP is zero (dead) or if they're alive
     :return: True if the character's is dead, return False otherwise
-     >>> character_one = {"X-coordinate": 0, "Y-coordinate": 0, "Current HP": 5}
+     >>> character_one = {"X-coordinate": 0, "Y-coordinate": 0, "Current HP": 7, "Current XP": 10, "Knowledge": "Novice"}
      >>> dead_yet(character_one)
      False
-     >>> character_two = {"X-coordinate": 0, "Y-coordinate": 0, "Current HP": 2}
+     >>> character_two = {"X-coordinate": 0, "Y-coordinate": 0, "Current HP": 1, "Current XP": 10, "Knowledge": "Novice"}
      >>> dead_yet(character_two)
      False
-     >>> character_three = {"X-coordinate": 0, "Y-coordinate": 0, "Current HP": 0}
+     >>> character_three = {"X-coordinate": 0, "Y-coordinate": 0, "Current HP": 0, "Current XP": 10, "Knowledge": "Novice"}
      >>> dead_yet(character_three)
      True
     """
