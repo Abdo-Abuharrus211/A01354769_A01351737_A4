@@ -1,5 +1,5 @@
 # "QUIT to end the game"
-#
+character = {"sfg": 0, "fsi3": 4}
 # This code is for after quit has been inputted:
 import json
 def store_character(character):
@@ -8,18 +8,30 @@ def store_character(character):
     :param character:
     :return:
     """
-    selection = input("You chose to quit the game, are you sure? Please type Y or N to choose")
-    if selection == "N":
-        return
-    elif selection == "Y":
-        save_selection = input("Would you like to save your character? PLease type Y or N to choose")
-        if save_selection == "N":
+    selection = input("You chose to quit the game, are you sure? Please type Y if you really want to quit").upper()
+    if selection == "Y":
+        save_selection = input("Would you like to save your character? PLease type Y or N").upper()
+        if save_selection != "N" or save_selection != "Y":
+            print("Please select Y or N")
+        elif save_selection == "N":
             character["Current HP"] = 0
-        if selection == "Y":
+        elif selection == "Y":
             filename = 'current_character_.json'
             with open(filename, 'w') as file_object:
                 json.dump(character, file_object)
             character["Current HP"] = 0
+    else:
+        return
+
+def main():
+    """
+    Drive the program.
+    """
+    store_character(character)
+
+if __name__ == "__main__":
+    main()
+
 
 
 
