@@ -12,6 +12,10 @@ from dialog import SPACER, ASCENSION_TIME, END
 import game_mechanics
 import game_state_control
 import dialog
+import time
+
+
+import time
 
 
 def game():
@@ -25,6 +29,11 @@ def game():
     direction = ""
     achieved_goal = False
     playsound("Audio/bgmusic.mp3", block=False)
+    for _ in range(3):
+        print('Tick')
+        time.sleep(1)
+        print('Tock')
+        time.sleep(1)
     print(dialog.WELCOME_MESSAGE)
     while not achieved_goal:
         print(SPACER)

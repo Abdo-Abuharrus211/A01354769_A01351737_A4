@@ -8,20 +8,22 @@ def store_character(character):
     :param character:
     :return:
     """
-    selection = input("You chose to quit the game, are you sure? Please type Y if you really want to quit").upper()
+    selection = input("You chose to quit the game, are you sure? Please type Y if you really want to "
+                      "quit (or any other key to not)").upper()
     if selection == "Y":
         save_selection = input("Would you like to save your character? PLease type Y or N").upper()
-        if save_selection != "N" or save_selection != "Y":
-            print("Please select Y or N")
-        elif save_selection == "N":
+        if save_selection == "N":
             character["Current HP"] = 0
         elif selection == "Y":
-            filename = 'current_character_.json'
+            filename = 'current_character.json'
             with open(filename, 'w') as file_object:
                 json.dump(character, file_object)
+            print("your game was saved")
             character["Current HP"] = 0
-    else:
-        return
+        else:
+            print("Please select Y or N")
+    else: return
+
 
 def main():
     """
