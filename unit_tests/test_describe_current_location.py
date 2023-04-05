@@ -8,13 +8,14 @@ from game_mechanics import describe_current_location
 
 class Test(TestCase):
 
-    def test_describe_current_location_character_error(self):
+    def test_describe_current_location_character_exception_raised(self):
         character_test = {"X-coordinate": 0, "Current HP": 10, "Current XP": 70, "Knowledge": "Novice"}
         with self.assertRaises(KeyError):
-            describe_current_location(make_board(), character_test)
+            describe_current_location(make_board(10, 10), character_test)
 
     # TODO: Chris, you told us to let this go beyond character limit
-    @patch('random.randint', side_effect=[0, 1, 2, 3, 4, 5, 6, 7, 8, 9])  # TODO: Add 100 numbers here
+    @patch('random.randint', side_effect=[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21,
+                                          22, 23])
     @patch('sys.stdout', new_callable=io.StringIO)
     def test_describe_current_location(self, mock_output, _):
         board = make_board(10, 10)
