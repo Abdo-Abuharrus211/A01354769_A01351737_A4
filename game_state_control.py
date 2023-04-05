@@ -127,6 +127,11 @@ def level_up(character: dict):
     >>> level_up(sam)
     The pupil has become a master. You're a Master Custodian now! You're ready to ascend.
     """
+    stat_list = ['X-coordinate', 'Y-coordinate', 'Current HP', 'Current XP', 'Knowledge']
+    for attribute in stat_list:
+        if attribute not in list(character.keys()):
+            raise KeyError("Character Attribute not found")
+
     if 0 <= character["Current XP"] < 100:
         character["Knowledge"] = "Novice"
     elif 100 <= character["Current XP"] < 200:

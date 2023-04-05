@@ -48,6 +48,7 @@ def move_character(character: dict, direction: str):
      >>> print(character_one["Y-coordinate"])
      1
     """
+    # No need to raise errors, because validate_move() does so
     if direction == "N":
         character["Y-coordinate"] -= 1
     elif direction == "S":

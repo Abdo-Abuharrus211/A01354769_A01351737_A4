@@ -4,6 +4,11 @@ from unittest import TestCase
 
 class TestLevelUp(TestCase):
 
+    def test_level_up_exception_raised(self):
+        character_test = {"X-coordinate": 0, "Y-coordinate": 0, "Current HP": 10, "Current XP": 70}
+        with self.assertRaises(KeyError):
+            level_up(character_test)
+
     def test_level_up_no(self):
         character_test = {"X-coordinate": 0, "Y-coordinate": 0, "Current HP": 10, "Current XP": 70,
                           "Knowledge": "Novice"}
