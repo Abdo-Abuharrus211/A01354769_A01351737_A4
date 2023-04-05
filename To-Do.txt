@@ -43,3 +43,9 @@ Implement Unit tests -
 - validate_move @done
  - check_final_boss @done
  - final_boss @done
+
+ FOR SAVING:
+ - function to write to json  @done
+ - function to call from json
+ - input into game option to quit the game
+ - into game.py option to load saved character
