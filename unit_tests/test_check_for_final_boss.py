@@ -7,9 +7,9 @@ from game_state_control import check_for_final_boss
 class TestCheckForFinalBoss(TestCase):
 
     def test_check_for_final_boss_exception_raised(self):
-        character_test = {"X-coordinate": 0, "Y-coordinate": 0, "Current HP": 10, "Current XP": 70}
+        char_test = {"X-coordinate": 0, "Y-coordinate": 0, "Current HP": 50, "Current XP": 20}
         with self.assertRaises(KeyError):
-            check_for_final_boss(character_test)
+            check_for_final_boss(char_test)
 
     @patch('random.randint', return_value=1)
     def test_check_for_final_boss_fail_low_level_no_chance(self, _):

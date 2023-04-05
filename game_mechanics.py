@@ -25,6 +25,11 @@ def describe_current_location(board: dict, character: dict):
     >>> describe_current_location(board_one, character_one)
     Lexus LFA
     """
+    stat_list = ['X-coordinate', 'Y-coordinate']
+    for attribute in stat_list:
+        if attribute not in list(character.keys()):
+            raise KeyError("Character Attribute not found")
+
     try:
         description = board[(character["X-coordinate"], character["Y-coordinate"])]
     except KeyError as e:
@@ -48,7 +53,12 @@ def move_character(character: dict, direction: str):
      >>> print(character_one["Y-coordinate"])
      1
     """
-    # No need to raise errors, because validate_move() does so
+    stat_list = ['X-coordinate', 'Y-coordinate']
+    for attribute in stat_list:
+        if attribute not in list(character.keys()):
+            raise KeyError("Character Attribute not found")
+
+    # No need to raise errors for direction, because validate_move() does so
     if direction == "N":
         character["Y-coordinate"] -= 1
     elif direction == "S":

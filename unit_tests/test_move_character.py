@@ -4,6 +4,11 @@ from unittest import TestCase
 
 class TestMoveCharacter(TestCase):
 
+    def test_move_character_exception_raised(self):
+        character_test = {"X-coordinate": 0, "Current HP": 10, "Current XP": 70, "Knowledge": "Novice"}
+        with self.assertRaises(KeyError):
+            move_character(character_test, "N")
+
     def test_move_character_S(self):
         character_location = {'X-coordinate': 0, 'Y-coordinate': 0, 'Current HP': 5}
         move_character(character_location, "S")
