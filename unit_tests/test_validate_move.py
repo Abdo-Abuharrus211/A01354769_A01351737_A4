@@ -9,21 +9,22 @@ class TestValidateMove(TestCase):
         character_test = {"X-coordinate": 0, "Y-coordinate": 0, "Current HP": 7, "Current XP": 10}
         with self.assertRaises(KeyError):
             validate_move({(0, 0): "Potato", (0, 1): "Pie", (1, 0): "Cheese", (1, 1): "Burger"}, character_test, "N")
+
     def test_validate_move_south(self):
         self.assertEqual(True, validate_move({(0, 0): "Potato", (0, 1): "Pie", (1, 0): "Cheese", (1, 1): "Burger"},
-        {"X-coordinate": 0, "Y-coordinate": 0, "Current HP": 5}, "S"))
+                                             {"X-coordinate": 0, "Y-coordinate": 0, "Current HP": 5}, "S"))
 
     def test_validate_move_north(self):
         self.assertEqual(True, validate_move({(0, 0): "Potato", (0, 1): "Pie", (1, 0): "Cheese", (1, 1): "Burger"},
-        {"X-coordinate": 1, "Y-coordinate": 1, "Current HP": 5}, "N"))
+                                             {"X-coordinate": 1, "Y-coordinate": 1, "Current HP": 5}, "N"))
 
     def test_validate_move_east(self):
         self.assertEqual(True, validate_move({(0, 0): "Potato", (0, 1): "Pie", (1, 0): "Cheese", (1, 1): "Burger"},
-        {"X-coordinate": 0, "Y-coordinate": 1, "Current HP": 5}, "E"))
+                                             {"X-coordinate": 0, "Y-coordinate": 1, "Current HP": 5}, "E"))
 
     def test_validate_move_west(self):
         self.assertEqual(True, validate_move({(0, 0): "Potato", (0, 1): "Pie", (1, 0): "Cheese", (1, 1): "Burger"},
-        {"X-coordinate": 1, "Y-coordinate": 1, "Current HP": 5}, "W"))
+                                             {"X-coordinate": 1, "Y-coordinate": 1, "Current HP": 5}, "W"))
 
     def test_validate_move_key_error_E(self):
         with self.assertRaises(KeyError):
@@ -52,6 +53,3 @@ class TestValidateMove(TestCase):
             test_character = {"X-coordinate": 0, "Y-coordinate": 1, "Current HP": 5}
             test_direction = "S"
             validate_move(test_board, test_character, test_direction)
-
-
-
