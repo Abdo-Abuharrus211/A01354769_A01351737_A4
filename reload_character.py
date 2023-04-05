@@ -1,9 +1,13 @@
 # "QUIT to end the game"
-character = {"sfg": 0, "fsi3": 4}
-# This code is for after quit has been inputted:
+from assets import make_character
 import json
+
+
 def store_character(character):
     """
+    Stores the character if selected.
+
+    This function stores the character stats when the user quits the game, if they choose to
 
     :param character:
     :return:
@@ -22,23 +26,30 @@ def store_character(character):
             character["Current HP"] = 0
         else:
             print("Please select Y or N")
-    else: return
+    else:
+        return
+
+
+def revive_character():
+    """
+
+    :return:
+    """
+    selection = input("Do you want to reload your previous character? Select Y or N ").upper()
+    if selection == "N":
+        make_character()
+    elif selection == "Y":
+        filename = 'current_character.json'
+        with open(filename) as file_object:
+            character = json.load(file_object)
+            return character
 
 
 def main():
     """
     Drive the program.
     """
-    store_character(character)
+
 
 if __name__ == "__main__":
     main()
-
-
-
-
-
-
-
-
-
