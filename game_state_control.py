@@ -35,6 +35,10 @@ def validate_move(board: dict, character: dict, direction: str) -> bool:
      >>> validate_move(board_three, character_three, direction_three)
      True
      """
+    stat_list = ['X-coordinate', 'Y-coordinate', 'Current HP', 'Current XP', 'Knowledge']
+    for attribute in stat_list:
+        if attribute not in list(character.keys()):
+            raise KeyError("Character Attribute not found")
 
     if direction == "N" and 0 <= character["Y-coordinate"] - 1:
         valid_move = True
