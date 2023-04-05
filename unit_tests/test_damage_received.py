@@ -4,6 +4,12 @@ from game_state_control import damage_received
 
 
 class TestDamageReceived(TestCase):
+
+    def test_damage_received_exception_raised(self):
+        character_test = {"X-coordinate": 0, "Y-coordinate": 0, "Current HP": 10, "Current XP": 70}
+        with self.assertRaises(KeyError):
+            damage_received(character_test)
+
     def test_damage_received_novice(self):
         bob = {"X-coordinate": 0, "Y-coordinate": 0, "Current HP": 7, "Current XP": 50, "Knowledge": "Novice"}
         self.assertEqual(10, damage_received(bob))

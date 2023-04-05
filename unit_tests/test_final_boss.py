@@ -22,7 +22,7 @@ class TestGuessingGame(TestCase):
         character = {"Current HP": 5}
         final_boss(character)
         game_prints_this = mock_output.getvalue()
-        expected_output = "Incorrect, game over\n"
+        expected_output = "Incorrect, Caraxes has constricted the light out of you...I'm sorry little one\n"
         self.assertEqual(expected_output, game_prints_this)
 
     @patch('builtins.input', side_effect=[9])

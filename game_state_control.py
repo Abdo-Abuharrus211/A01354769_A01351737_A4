@@ -35,6 +35,11 @@ def validate_move(board: dict, character: dict, direction: str) -> bool:
      >>> validate_move(board_three, character_three, direction_three)
      True
      """
+    stat_list = ['X-coordinate', 'Y-coordinate']
+    for attribute in stat_list:
+        if attribute not in list(character.keys()):
+            raise KeyError("Character Attribute not found")
+
     if direction == "N" and 0 <= character["Y-coordinate"] - 1:
         valid_move = True
     elif direction == "S" and character["Y-coordinate"] + 1 <= max(board)[1]:
@@ -69,16 +74,21 @@ def dead_yet(character: dict) -> dict:
     :precondition: character is valid dictionary containing character's stats and not None type
     :postcondition: checks if character's HP is zero (dead) or if they're alive
     :return: True if the character's is dead, return False otherwise
-     >>> character_one = {"X-coordinate": 0, "Y-coordinate": 0, "Current HP": 5}
+     >>> character_one = {"X-coordinate": 0, "Y-coordinate": 0, "Current HP": 7, "Current XP": 10, "Knowledge": "Novice"}
      >>> dead_yet(character_one)
      False
-     >>> character_two = {"X-coordinate": 0, "Y-coordinate": 0, "Current HP": 2}
+     >>> character_two = {"X-coordinate": 0, "Y-coordinate": 0, "Current HP": 1, "Current XP": 10, "Knowledge": "Novice"}
      >>> dead_yet(character_two)
      False
-     >>> character_three = {"X-coordinate": 0, "Y-coordinate": 0, "Current HP": 0}
+     >>> character_three = {"X-coordinate": 0, "Y-coordinate": 0, "Current HP": 0, "Current XP": 10, "Knowledge": "Novice"}
      >>> dead_yet(character_three)
      True
     """
+    stat_list = ['X-coordinate', 'Y-coordinate', 'Current HP', 'Current XP', 'Knowledge']
+    for attribute in stat_list:
+        if attribute not in list(character.keys()):
+            raise KeyError("Character Attribute not found")
+
     return character["Current HP"] == 0
 
 
@@ -96,6 +106,11 @@ def damage_received(character):
     >>> damage_received(chad)
     7
     """
+    stat_list = ['X-coordinate', 'Y-coordinate', 'Current HP', 'Current XP', 'Knowledge']
+    for attribute in stat_list:
+        if attribute not in list(character.keys()):
+            raise KeyError("Character Attribute not found")
+
     if character["Knowledge"] == "Master Custodian":
         damage_inflicted = 3
     elif character["Knowledge"] == "Bookworm":
@@ -127,6 +142,11 @@ def level_up(character: dict):
     >>> level_up(sam)
     The pupil has become a master. You're a Master Custodian now! You're ready to ascend.
     """
+    stat_list = ['X-coordinate', 'Y-coordinate', 'Current HP', 'Current XP', 'Knowledge']
+    for attribute in stat_list:
+        if attribute not in list(character.keys()):
+            raise KeyError("Character Attribute not found")
+
     if 0 <= character["Current XP"] < 100:
         character["Knowledge"] = "Novice"
     elif 100 <= character["Current XP"] < 200:
@@ -146,6 +166,11 @@ def check_for_final_boss(character: dict) -> bool:
     :postcondition: generates random integer in a specific range then check if it's equal or greater than 25%
     :return: True if there's a 20% or more chance of facing a foe, return False otherwise
     """
+    stat_list = ['X-coordinate', 'Y-coordinate', 'Current HP', 'Current XP', 'Knowledge']
+    for attribute in stat_list:
+        if attribute not in list(character.keys()):
+            raise KeyError("Character Attribute not found")
+
     random_chance = random.randint(1, 10) >= 4
     if character["Current XP"] >= 300 and random_chance:
         return True

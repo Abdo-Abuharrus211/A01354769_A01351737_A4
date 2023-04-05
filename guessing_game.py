@@ -18,13 +18,13 @@ def guessing_game(character: dict):
     :postcondition: update to character dictionary if appropriate
     """
 
-    def get_question(character: dict):
+    def get_question(inner_character: dict):
         """
         Get the question and answer for enemy quiz
 
         This function will retrieve a random question and correct answer from the appropriate
          dictionary based on character Level
-        :param character:
+        :param inner_character:
         :precondition:
         :return: the answer of the question
         """
@@ -118,7 +118,7 @@ def guessing_game(character: dict):
                              "\n 5: In bed, dreaming": 3
                              }
 
-        player_level = character["Knowledge"]
+        player_level = inner_character["Knowledge"]
         if player_level == "Novice":
             current_dictionary = questions_level_1
         elif player_level == "Bookworm":

@@ -16,10 +16,10 @@ From assignment sheet:
 
 - Refactor guessing game into separate module including two inner functions and dictionaries
 - Finish Unit testing all functions (potentially import tests from my Lab 7)
-- Incorporate story elements
-- Revise ALL print statements
+- Incorporate story elements @done
+- Revise ALL print statements @done
 - Write somewhat comprehensive list of features & mechanics in README
-
+- Add raise errors to all eplicable functions
 
 Add function annotations @done
 Check no function is longer than 15 lines
