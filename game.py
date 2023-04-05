@@ -1,6 +1,8 @@
 """
 Abdo & Kate make a game for A4
 """
+from playsound import playsound
+
 from guessing_game import guessing_game
 from user_io import get_user_choice, final_boss
 from game_state_control import check_for_final_boss
@@ -22,6 +24,7 @@ def game():
     character = make_character()
     direction = ""
     achieved_goal = False
+    playsound("Audio/bgmusic.mp3", block=False)
     print(dialog.WELCOME_MESSAGE)
     while not achieved_goal:
         print(SPACER)
