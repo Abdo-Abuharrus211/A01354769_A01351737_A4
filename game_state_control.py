@@ -113,7 +113,7 @@ def damage_received(character):
     10
     >>> chad = {"X-coordinate": 0, "Y-coordinate": 0, "Current HP": 7, "Current XP": 111, "Knowledge": "Bookworm"}
     >>> damage_received(chad)
-    7
+    5
     """
     stat_list = ['X-coordinate', 'Y-coordinate', 'Current HP', 'Current XP', 'Knowledge']
     for attribute in stat_list:
@@ -147,10 +147,13 @@ def level_up(character: dict):
     {'X-coordinate': 0, 'Y-coordinate': 0, 'Current HP': 7, 'Current XP': 10, 'Knowledge': 'Novice'}
     >>> ellie={"X-coordinate": 0, "Y-coordinate": 0, "Current HP": 7, "Current XP": 101, "Knowledge": "Novice"}
     >>> level_up(ellie)
-    Well done, little one. You're now a Bookworm! Keep going!
+    Congratulations, young bookworm. Your tireless pursuit of knowledge has earned you the title
+     of a true master of the written word. May your wisdom guide you further in your journey.
+    ===========================================================
     >>> sam={"X-coordinate": 0, "Y-coordinate": 0, "Current HP": 7, "Current XP": 289, "Knowledge": "Bookworm"}
     >>> level_up(sam)
     The pupil has become a master. You're a Master Custodian now! You're ready to ascend.
+    ===========================================================
     """
     stat_list = ['X-coordinate', 'Y-coordinate', 'Current HP', 'Current XP', 'Knowledge']
     for attribute in stat_list:
