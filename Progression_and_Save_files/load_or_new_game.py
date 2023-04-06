@@ -1,7 +1,7 @@
 """
  This module checks if the player wants to load a save file or start a new game
 """
-from Progression_and_Save_files.reload_character import revive_character
+from Progression_and_Save_files.reload_character import load_character
 from assets import make_character
 
 
@@ -19,7 +19,7 @@ def load_char_or_new():
     if user_choice == 1:
         character = make_character()
     elif user_choice == 2:
-        character = revive_character()
+        character = load_character()
     else:
         raise ValueError("Option not available. Please select 1 or 2")
 

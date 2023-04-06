@@ -3,7 +3,7 @@
 """
 import random
 
-from Progression_and_Save_files.reload_character import store_character
+from Progression_and_Save_files.reload_character import save_character
 from assets import make_enemy
 from game_state_control import damage_received
 
