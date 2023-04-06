@@ -34,8 +34,8 @@ Review docstrings - let's do this together @done
 conduct doctests @done
 Implement Unit tests -
  - move_character @done
- - make_character
- - make_board -not sure how to unit test this one
+ - make_character@done
+ - make_board -not sure how to unit test this one@done
  - make_description @done
  - make_enemy @done
 
@@ -44,7 +44,7 @@ Implement Unit tests -
 
  - check_for_foes @done
  - get_user_choice @done
- - describe_current_location
+ - describe_current_location@done
  - dead_yet @done
 -  level_up @done
 - validate_move @done
@@ -53,6 +53,6 @@ Implement Unit tests -
 
  FOR SAVING:
  - function to write to json  @done
- - function to call from json
- - input into game option to quit the game
- - into game.py option to load saved character
+ - function to call from json @done
+ - input into game option to quit the game @done
+ - into game.py option to load saved character @done
