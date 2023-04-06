@@ -33,12 +33,13 @@ def game():
     direction = ""
     achieved_goal = False
     quit_game = False
-    playsound("Audio/bgmusic.mp3", block=False)
     for _ in range(3):
+        # print('Compiling Encyclopedias and Compendiums.')
         print('Tick')
         time.sleep(1)
         print('Tock')
         time.sleep(1)
+    playsound("Audio/bgmusic.mp3", block=False)
     print(dialog.WELCOME_MESSAGE)
     while not achieved_goal:
         print(SPACER)
