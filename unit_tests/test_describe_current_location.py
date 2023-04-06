@@ -14,6 +14,7 @@ class Test(TestCase):
             describe_current_location(make_board(10, 10), character_test)
 
     # TODO: Chris, you told us to let this go beyond character limit
+    # TODO: Do I use 100 for 100 calls of randint or 24 for the tuple's length
     @patch('random.randint', side_effect=[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21,
                                           22, 23])
     @patch('sys.stdout', new_callable=io.StringIO)

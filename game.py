@@ -4,18 +4,16 @@ Abdo & Kate make a game for A4
 import playsound as playsound
 
 from Progression_and_Save_files.load_or_new_game import load_char_or_new
-from Progression_and_Save_files.reload_character import store_character
+from Progression_and_Save_files.reload_character import save_character
 from guessing_game import guessing_game
 from game_user_io import get_user_choice, final_boss
 from game_state_control import check_for_final_boss
-from assets import make_board, make_character
+from assets import make_board
 from dialog import SPACER, ASCENSION_TIME, END
 
 import game_mechanics
 import game_state_control
 import dialog
-import time
-
 
 import time
 
@@ -51,7 +49,7 @@ def game():
         valid_move = False
 
         if direction == "Q":
-            quit_game = store_character(character)
+            quit_game = save_character(character)
         if quit_game:
             break
         try:

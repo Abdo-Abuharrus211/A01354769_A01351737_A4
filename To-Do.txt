@@ -30,8 +30,8 @@ From assignment sheet:
 
 Add function annotations @done
 Check no function is longer than 15 lines
-Review docstrings - let's do this together
-conduct doctests
+Review docstrings - let's do this together @done
+conduct doctests @done
 Implement Unit tests -
  - move_character @done
  - make_character

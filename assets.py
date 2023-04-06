@@ -8,12 +8,12 @@ import itertools
 
 def make_description() -> str:
     """
-    Generate description.
+    Generate description randomly.
 
-    This function generates a random description from a list of descriptions.
+    This function generates a random description randomly from a tuple of descriptions.
 
-    :precondition: must have a dictionary of room descriptions
-    :postcondition: generate random integer to index through a list and obtain a room description
+    :precondition: must have a tuple of room descriptions
+    :postcondition: generate random integer to index through a tuple and obtain a room description
     :return: a random string from the collection of strings
     """
 
@@ -70,7 +70,7 @@ def make_enemy() -> str:
     """
     Generate random description for enemies.
 
-    :postcondition: generate random integer to index through a list and obtain an enemy description
+    :postcondition: generate random integer to index through a tuple and obtain an enemy description
     :return: a random string from the collection of strings
     """
     enemy_descriptions = ("Look out, it's a warrior ant with ill intentions!",
@@ -126,7 +126,7 @@ def make_character() -> dict:
     :postcondition: creates dictionary with character attributes
     :return: dictionary with character attributes
     >>> make_character()
-    {'X-coordinate': 0, 'Y-coordinate': 0, 'Current HP': 20, 'Current XP': 0, 'Knowledge': 1}
+    {'X-coordinate': 0, 'Y-coordinate': 0, 'Current HP': 50, 'Current XP': 0, 'Knowledge': 'Novice'}
     """
     player = {"X-coordinate": 0, "Y-coordinate": 0, "Current HP": 50, "Current XP": 0, "Knowledge": "Novice"}
     return player

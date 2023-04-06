@@ -3,7 +3,7 @@
 """
 import random
 
-from Progression_and_Save_files.reload_character import store_character
+from Progression_and_Save_files.reload_character import save_character
 from assets import make_enemy
 from game_state_control import damage_received
 
@@ -15,13 +15,13 @@ def get_user_choice() -> str:
     """
     Asks the player which direction they want to move towards.
 
-    :precondition: player must only enter 'N','E','S', or 'W' directions when prompted
+    :precondition: player must only enter 'N','E','S', or 'W' directions when prompted or 'Q' to quit game
     :postcondition: receives player's input and assigns it to a variable, and raises error if player misbehaves
     :return: a string for the direction the player wishes to move towards
-    :raises ValueError: if player enters anything besides 'N','E','S', or 'W""
+    :raises ValueError: if player enters anything besides 'N','E','S', 'W'  or 'Q'
     """
     accepted_directions = ("N", "E", "S", "W")
-    directions_dict = {"N": "North", "E": "East", "S": "South", "W": "West","Q": "Quit"}
+    directions_dict = {"N": "North", "E": "East", "S": "South", "W": "West", "Q": "Quit"}
     player_choice = ""
     need_direction = True
     while need_direction:
@@ -45,24 +45,14 @@ def final_boss(character: dict):
 
     This function plays a game where the user must select the correct answer.
 
-    :param character: dictionary of character attributes containing string keys X-coordinate, Y-coordinate and
-                    current HP with integer values
-    :precondition character: must be a dictionary of character attributes
-                             containing string keys X-coordinate, Y-coordinate and current HP
-    :precondition character: all dictionary values must be integers
+    :param character: dictionary of representing the character and their attributes including X-Coordinate, Y-Coordinate
+                        Current HP, Current XP, &  Knowledge
+    :precondition character: dictionary of representing the character and their attributes including X-Coordinate,
+                            Y-Coordinate Current HP, Current XP, &  Knowledge
+    :precondition character: all dictionary values must be integers except for Knowledge values must be a String
     :postcondition: prints appropriate message
-    :postcondition: character HP goes to 0
+    :postcondition: set character HP to 0
     """
-    #
-    # print("Which of the following, In infinite Jest, is not something you would learn from spending time "
-    #       "in a halfway house?\n"
-    #       "1: That, perversely, it is often more fun to want something than to have it\n"
-    #       "2: That you cannot win all of the time \n"
-    #       "3: That everybody is identical in their secret, unspoken belief that way deep down, they are \n"
-    #       "different from everyone else\n"
-    #       "4: That certain persons simply will not like you, no matter what you do\n"
-    #       "That there is such a thing as raw, unalloyed, agendaless kindness")
-
     try:
         answer = int(input("Which of the following, In infinite Jest, is not something you would learn from "
                            "spending time in a halfway house?\n "

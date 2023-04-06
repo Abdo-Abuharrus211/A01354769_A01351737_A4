@@ -6,16 +6,18 @@ from game_state_control import damage_received
 
 def guessing_game(character: dict):
     """
-    Play a guessing game
+    Play a quiz game
 
-    This function plays a guessing game where the player has to guess a randomly selected number between 1 and 5.
+    This function plays a quiz game where the player has to choose the correct answer.
 
-    :param character: dictionary of character attributes containing string keys X-coordinate, Y-coordinate and
-                    current HP with integer values
-    :precondition character: must be a dictionary of character attributes
-                             containing string keys X-coordinate, Y-coordinate and current HP
-    :precondition character: all dictionary values must be integers
+    :param character: dictionary of representing the character and their attributes including X-Coordinate, Y-Coordinate
+            Current HP, Current XP, &  Knowledge
+    :precondition character: must be a dictionary of representing the character and their attributes including
+                    X-Coordinate, Y-Coordinate Current HP, Current XP, &  Knowledge
+    :precondition character: all dictionary values except for Knowledge must be integers
+    :precondition: character Knowledge must either be 'Novice', 'Bookworm, or 'Master Custodian'
     :postcondition: update to character dictionary if appropriate
+    :postcondition: prints the appropriate follow-up message to the player
     """
 
     def get_question(inner_character: dict):
@@ -24,8 +26,11 @@ def guessing_game(character: dict):
 
         This function will retrieve a random question and correct answer from the appropriate
          dictionary based on character Level
-        :param inner_character:
-        :precondition:
+        :param inner_character: dictionary of representing the character and their attributes including X-Coordinate,
+                                Y-Coordinate Current HP, Current XP, &  Knowledge
+        :precondition: must be dictionary of representing the character and their attributes including X-Coordinate,
+                        Y-Coordinate Current HP, Current XP, &  Knowledge
+        :postcondition: prints the correct question to the player
         :return: the answer of the question
         """
         questions_level_1 = {"Shantaram (by Australian escaped criminal Gregory David Roberts)"

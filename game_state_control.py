@@ -9,10 +9,12 @@ from dialog import LEVEL_TWO_REVELATION, SPACER
 def validate_move(board: dict, character: dict, direction: str) -> bool:
     """
     Validate chosen direction.
+
     This functions determines if moving in given direction is permitted and within the board's bounds.
 
     :param board: dictionary representing the game board's rooms, with (x,y) coordinates as keys and string values.
-    :param character: dictionary representing player's character stats, current location and HP
+    :param character: dictionary of representing the character and their attributes including X-Coordinate, Y-Coordinate
+            Current HP, Current XP, &  Knowledge
     :param direction: a string specifying which direction the player wants to move towards
     :precondition: character and direction are not None type and direction is a non-empty string
     :postcondition: Correctly checks if direction is valid and if the move keeps player within bounds
@@ -58,10 +60,10 @@ def check_for_foes() -> bool:
     """
     Determine if there is a chance of encountering  foe.
 
-    This function Determines if there's a 30% chance to face and fight a foe to fight by generating a random integer.
+    This function Determines if there's a 33.33% chance to face and fight a foe to fight by generating a random integer.
 
-    :postcondition: generates random integer in a specific range then check if it's equal or greater than 25%
-    :return: True if there's a 30% or more chance of facing a foe, return False otherwise
+    :postcondition: generates random integer in a specific range then check if it's equal or greater than 33.33%
+    :return: True if a foe is encountered, return False otherwise
     """
     return random.randint(1, 6) <= 2
 
@@ -70,10 +72,13 @@ def dead_yet(character: dict) -> dict:
     """
     Determine if the player's character is dead.
 
-    :param character: dictionary representing player's character stats, current location and HP
-    :precondition: character is valid dictionary containing character's stats and not None type
+    :param character: dictionary of representing the character and their attributes including X-Coordinate, Y-Coordinate
+            Current HP, Current XP, &  Knowledge
+    :precondition: dictionary of representing the character and their attributes including X-Coordinate, Y-Coordinate
+            Current HP, Current XP, &  Knowledge
     :postcondition: checks if character's HP is zero (dead) or if they're alive
     :return: True if the character's is dead, return False otherwise
+    :raise: KeyError if the character is missing an attribute
      >>> character_one = {"X-coordinate": 0, "Y-coordinate": 0, "Current HP": 7, "Current XP": 10, "Knowledge": "Novice"}
      >>> dead_yet(character_one)
      False
@@ -94,17 +99,21 @@ def dead_yet(character: dict) -> dict:
 
 def damage_received(character):
     """
-    Adjust damage received based on character's level.
+    Adjust damage received based on character's level to imitate increasing character resistance.
 
     A function that adjusts the amount of damage inflicted when attacked to mirror character resistance gains
-    :param character:
-    :return:
+    :param character: dictionary of representing the character and their attributes including X-Coordinate, Y-Coordinate
+            Current HP, Current XP, &  Knowledge
+    :precondition: character must be dictionary of representing the character and their attributes including
+    X-Coordinate, Y-Coordinate Current HP, Current XP, &  Knowledge
+    :return: the appropriate amount of damage inflicted
+    :raise: KeyError if the character is missing an attribute
     >>> bob = {"X-coordinate": 0, "Y-coordinate": 0, "Current HP": 7, "Current XP": 10, "Knowledge": "Novice"}
     >>> damage_received(bob)
     10
     >>> chad = {"X-coordinate": 0, "Y-coordinate": 0, "Current HP": 7, "Current XP": 111, "Knowledge": "Bookworm"}
     >>> damage_received(chad)
-    7
+    5
     """
     stat_list = ['X-coordinate', 'Y-coordinate', 'Current HP', 'Current XP', 'Knowledge']
     for attribute in stat_list:
@@ -131,16 +140,20 @@ def level_up(character: dict):
     :precondition character: must be a dictionary of character attributes
                              containing string keys X-coordinate, Y-coordinate, current HP, current XP and Knowledge
     :postcondition: update Knowledge if appropriate based on current XP
+    :raise: KeyError if the character is missing an attribute
     >>> bob={"X-coordinate": 0, "Y-coordinate": 0, "Current HP": 7, "Current XP": 10, "Knowledge": "Novice"}
     >>> level_up(bob)
     >>> print(bob)
     {'X-coordinate': 0, 'Y-coordinate': 0, 'Current HP': 7, 'Current XP': 10, 'Knowledge': 'Novice'}
     >>> ellie={"X-coordinate": 0, "Y-coordinate": 0, "Current HP": 7, "Current XP": 101, "Knowledge": "Novice"}
     >>> level_up(ellie)
-    Well done, little one. You're now a Bookworm! Keep going!
+    Congratulations, young bookworm. Your tireless pursuit of knowledge has earned you the title
+     of a true master of the written word. May your wisdom guide you further in your journey.
+    ===========================================================
     >>> sam={"X-coordinate": 0, "Y-coordinate": 0, "Current HP": 7, "Current XP": 289, "Knowledge": "Bookworm"}
     >>> level_up(sam)
     The pupil has become a master. You're a Master Custodian now! You're ready to ascend.
+    ===========================================================
     """
     stat_list = ['X-coordinate', 'Y-coordinate', 'Current HP', 'Current XP', 'Knowledge']
     for attribute in stat_list:
@@ -161,10 +174,15 @@ def level_up(character: dict):
 
 def check_for_final_boss(character: dict) -> bool:
     """
-    Determine if there's a 20% chance to face and fight a foe to fight by generating a random integer.
+    Determine if the player is ready to face the Final Boss and generate random spawn chance.
 
+    :param character: dictionary of representing the character and their attributes including X-Coordinate, Y-Coordinate
+            Current HP, Current XP, &  Knowledge
+    :precondition: character dictionary of representing the character and their attributes including X-Coordinate,
+                    Y-Coordinate Current HP, Current XP, &  Knowledge
     :postcondition: generates random integer in a specific range then check if it's equal or greater than 25%
-    :return: True if there's a 20% or more chance of facing a foe, return False otherwise
+    :return: True if there's a 20% or more chance of facing the final boss when player's ready, return False otherwise
+    :raise: KeyError if the character is missing an attribute
     """
     stat_list = ['X-coordinate', 'Y-coordinate', 'Current HP', 'Current XP', 'Knowledge']
     for attribute in stat_list:
