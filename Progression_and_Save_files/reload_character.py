@@ -3,7 +3,7 @@ from assets import make_character
 import json
 
 
-def store_character(character):
+def store_character(character: dict):
     """
     Stores the character if selected.
 
