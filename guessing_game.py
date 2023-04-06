@@ -17,6 +17,7 @@ def guessing_game(character: dict):
     :precondition character: all dictionary values except for Knowledge must be integers
     :precondition: character Knowledge must either be 'Novice', 'Bookworm, or 'Master Custodian'
     :postcondition: update to character dictionary if appropriate
+    :postcondition: prints the appropriate follow-up message to the player
     """
 
     def get_question(inner_character: dict):
@@ -29,6 +30,7 @@ def guessing_game(character: dict):
                                 Y-Coordinate Current HP, Current XP, &  Knowledge
         :precondition: must be dictionary of representing the character and their attributes including X-Coordinate,
                         Y-Coordinate Current HP, Current XP, &  Knowledge
+        :postcondition: prints the correct question to the player
         :return: the answer of the question
         """
         questions_level_1 = {"Shantaram (by Australian escaped criminal Gregory David Roberts)"
