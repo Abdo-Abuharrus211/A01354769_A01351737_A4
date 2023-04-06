@@ -11,11 +11,13 @@ class TestSaveCharacter(unittest.TestCase):
     def test_save_character_file_exist(self):
         self.assertTrue(os.path.exists('../Progression_and_Save_files/saved_character.json'))
 
-    def test_save_character(self):
+    @patch('builtins.input', side_effect=["Y", "Y"])
+    def test_save_character(self,_):
         character = {"X-coordinate": 1, "Y-coordinate": 1, "Current HP": 30, "Current XP": 0, "Knowledge": "Novice"}
         save_character(character)
         with open('../Progression_and_Save_files/saved_character.json', 'r') as file:
             saved_character = json.load(file)
+        with _:
             self.assertEqual(character, saved_character)
 
     @patch('builtins.input', return_value='N')

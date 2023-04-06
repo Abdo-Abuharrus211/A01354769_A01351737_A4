@@ -10,7 +10,7 @@ class TestGuessingGame(TestCase):
     @patch('builtins.input', side_effect=["T"])
     def test_guessing_game_value_error_letter(self, _):
         with self.assertRaises(ValueError):
-            character = {'X-coordinate': 0, 'Y-coordinate': 0, 'Current HP': 5}
+            character = {"X-coordinate": 1, "Y-coordinate": 1, "Current HP": 50, "Current XP": 0, "Knowledge": "Novice"}
             guessing_game(character)
 
         @patch('builtins.input', side_effect=[2])
@@ -56,7 +56,7 @@ class TestGuessingGame(TestCase):
     @patch('builtins.input', side_effect=[2])
     @patch('random.randint', return_value=2)
     def test_guessing_game_correct_print_health(self, _, __):
-        character = {"Current HP": 5}
+        character = {"X-coordinate": 1, "Y-coordinate": 1, "Current HP": 30, "Current XP": 0, "Knowledge": "Novice"}
         guessing_game(character)
         expected_output = {"Current HP": 5}
         actual_output = character
