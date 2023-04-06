@@ -9,8 +9,8 @@ def load_char_or_new():
     """
     Check if player wants to start new game or load save file and spawn character accordingly
     :precondition: user will only enter '1' or '2'
-    :postcondition:
-    :return:
+    :postcondition: Determine how the player would like to start the game based on their input
+    :return: a dictionary to spawn the character from a JSON save file or by creating a new one
     """
     user_choice = int(input("Welcome to Cata! Let's begin, choose '1' or '2':\n1 - New Game.\n2 - Load Game."))
     # TODO: should we add a 'q' option here too???

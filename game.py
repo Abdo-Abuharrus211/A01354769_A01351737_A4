@@ -3,6 +3,7 @@ Abdo & Kate make a game for A4
 """
 from playsound import playsound
 
+from Progression_and_Save_files.load_or_new_game import load_char_or_new
 from guessing_game import guessing_game
 from user_io import get_user_choice, final_boss
 from game_state_control import check_for_final_boss

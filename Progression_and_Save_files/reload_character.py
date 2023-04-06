@@ -12,6 +12,7 @@ def store_character(character):
     :param character:
     :return:
     """
+    # TODO: I think this does too much, quitting and saving and printing. it should save only I think
     selection = input("You chose to quit the game, are you sure? Please type Y if you really want to "
                       "quit (or any other key to not)").upper()
     if selection == "Y":
@@ -19,7 +20,7 @@ def store_character(character):
         if save_selection == "N":
             character["Current HP"] = 0
         elif selection == "Y":
-            filename = 'current_character.json'
+            filename = 'saved_character.json'
             with open(filename, 'w') as file_object:
                 json.dump(character, file_object)
             print("your game was saved")
@@ -39,7 +40,7 @@ def revive_character():
     if selection == "N":
         make_character()
     elif selection == "Y":
-        filename = 'current_character.json'
+        filename = 'saved_character.json'
         with open(filename) as file_object:
             character = json.load(file_object)
             return character

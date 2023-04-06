@@ -20,9 +20,9 @@ From assignment sheet:
 - Revise ALL print statements @done
 
 -
-- Add 'quit' option? and add quit guard boolean in game()
+- Add 'quit' option to get_user_choices() ? and add quit guard boolean in game()
 - Add Load/New prompt function at start of game
--
+- Break down store_character()
 -
 
 - Write somewhat comprehensive list of features & mechanics in README
