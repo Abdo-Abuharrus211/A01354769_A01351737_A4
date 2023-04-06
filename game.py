@@ -1,7 +1,7 @@
 """
 Abdo & Kate make a game for A4
 """
-from playsound import playsound
+import playsound as playsound
 
 from Progression_and_Save_files.load_or_new_game import load_char_or_new
 from Progression_and_Save_files.reload_character import save_character

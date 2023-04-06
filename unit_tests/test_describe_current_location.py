@@ -19,9 +19,9 @@ class Test(TestCase):
                                           22, 23])
     @patch('sys.stdout', new_callable=io.StringIO)
     def test_describe_current_location(self, mock_output, _):
-        board = make_board(10, 10)
-        character = make_character()
-        describe_current_location(board, character)
+        test_board = {(0, 0): 'The dusty scrolls of the stacks howled with an eerie silence'}
+        test_character = {"X-coordinate": 0, "Y-coordinate": 0}
+        describe_current_location(test_board, test_character)
         function_output = mock_output.getvalue()
-        expected = "The dusty scrolls of the stacks howled with an eerie silence"
+        expected = "The dusty scrolls of the stacks howled with an eerie silence\n"
         self.assertEqual(expected, function_output)
