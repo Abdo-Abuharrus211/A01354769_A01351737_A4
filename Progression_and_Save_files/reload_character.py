@@ -21,7 +21,7 @@ def store_character(character: dict):
             quit_game = True
             # character["Current HP"] = 0
         elif selection == "Y":
-            filename = 'saved_character.json'
+            filename = 'Progression_and_Save_files/saved_character.json'
             with open(filename, 'w') as file_object:
                 json.dump(character, file_object)
             print("your game was saved")
