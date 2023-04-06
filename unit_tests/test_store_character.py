@@ -1,6 +1,8 @@
 import unittest
 import pathlib
-from reload_character import store_character
+from unittest.mock import patch
+
+
 class TestCase(unittest.TestCase):
 
     @patch('builtins.input', side_effect=["Y"])
@@ -8,5 +10,3 @@ class TestCase(unittest.TestCase):
     def test_store_character_file_exists(self):
         path = pathlib.Path("current_character.json")
         self.assertTrue(path.is_file())
-
-
