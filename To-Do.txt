@@ -18,6 +18,13 @@ From assignment sheet:
 - Finish Unit testing all functions (potentially import tests from my Lab 7)
 - Incorporate story elements @done
 - Revise ALL print statements @done
+
+-
+- Add 'quit' option? and add quit guard boolean in game()
+- Add Load/New prompt function at start of game
+-
+-
+
 - Write somewhat comprehensive list of features & mechanics in README
 - Add raise errors to all eplicable functions
 

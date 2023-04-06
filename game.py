@@ -25,7 +25,9 @@ def game():
     rows = 10
     columns = 10
     board = make_board(rows, columns)
-    character = make_character()
+    # Here we call on the load/new function
+    character = load_char_or_new()
+    # character = make_character()
     direction = ""
     achieved_goal = False
     playsound("Audio/bgmusic.mp3", block=False)
