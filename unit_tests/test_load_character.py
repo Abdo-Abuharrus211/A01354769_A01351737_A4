@@ -11,7 +11,7 @@ class TestLoadCharacter(unittest.TestCase):
     @patch('builtins.input', return_value='Y')
     def test_load_character(self, _):
         character = {"X-coordinate": 1, "Y-coordinate": 1, "Current HP": 30, "Current XP": 0, "Knowledge": "Novice"}
-        with open('saved_character.json', 'w') as file:
+        with open('../Progression_and_Save_files/saved_character.json', 'w') as file:
             json.dump(character, file)
         with _:
             loaded_character = load_character()

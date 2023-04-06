@@ -9,12 +9,12 @@ from Progression_and_Save_files.reload_character import save_character
 
 class TestSaveCharacter(unittest.TestCase):
     def test_save_character_file_exist(self):
-        self.assertTrue(os.path.exists('saved_character.json'))
+        self.assertTrue(os.path.exists('../Progression_and_Save_files/saved_character.json'))
 
     def test_save_character(self):
         character = {"X-coordinate": 1, "Y-coordinate": 1, "Current HP": 30, "Current XP": 0, "Knowledge": "Novice"}
         save_character(character)
-        with open('/saved_character.json', 'r') as file:
+        with open('../Progression_and_Save_files/saved_character.json', 'r') as file:
             saved_character = json.load(file)
             self.assertEqual(character, saved_character)
 
