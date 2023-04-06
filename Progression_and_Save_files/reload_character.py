@@ -18,17 +18,21 @@ def store_character(character: dict):
     if selection == "Y":
         save_selection = input("Would you like to save your character? PLease type Y or N").upper()
         if save_selection == "N":
-            character["Current HP"] = 0
+            quit_game = True
+            # character["Current HP"] = 0
         elif selection == "Y":
             filename = 'saved_character.json'
             with open(filename, 'w') as file_object:
                 json.dump(character, file_object)
             print("your game was saved")
-            character["Current HP"] = 0
+            quit_game = True
+            # character["Current HP"] = 0
         else:
             print("Please select Y or N")
     else:
-        return
+        quit_game = False
+
+    return quit_game
 
 
 def revive_character():

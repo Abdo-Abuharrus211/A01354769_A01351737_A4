@@ -2,6 +2,8 @@
     For functions that interact with the player.
 """
 import random
+
+from Progression_and_Save_files.reload_character import store_character
 from assets import make_enemy
 from game_state_control import damage_received
 
@@ -19,20 +21,22 @@ def get_user_choice() -> str:
     :raises ValueError: if player enters anything besides 'N','E','S', or 'W""
     """
     accepted_directions = ("N", "E", "S", "W")
-    directions_dict = {"N": "North", "E": "East", "S": "South", "W": "West"}
-    player_movement = ""
+    directions_dict = {"N": "North", "E": "East", "S": "South", "W": "West","Q": "Quit"}
+    player_choice = ""
     need_direction = True
     while need_direction:
-        if player_movement == "" or player_movement not in accepted_directions:
-            player_movement = input(
+        if player_choice == "" or player_choice not in accepted_directions:
+            player_choice = input(
                 "Which way would you like to go?\nRemember, your map scroll only accepts:\n"
-                " 'N' for North\n 'E' for East\n 'S' for South\n 'W' for West\n ").upper()
-            if player_movement in accepted_directions:
+                " 'N' for North\n 'E' for East\n 'S' for South\n 'W' for West\n\n 'Q' for Quit game\n").upper()
+            if player_choice in accepted_directions and player_choice != "Q":
                 need_direction = False
-                print(f"Heading {directions_dict[player_movement]}, off we go!")
+                print(f"Heading {directions_dict[player_choice]}, off we go!")
+            elif player_choice == "Q":
+                return player_choice
             else:
                 raise ValueError("\nWe mustn't wander astray!\nWe need to head in a direction that's on our path.")
-    return player_movement
+    return player_choice
 
 
 def final_boss(character: dict):

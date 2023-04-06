@@ -4,8 +4,9 @@ Abdo & Kate make a game for A4
 from playsound import playsound
 
 from Progression_and_Save_files.load_or_new_game import load_char_or_new
+from Progression_and_Save_files.reload_character import store_character
 from guessing_game import guessing_game
-from user_io import get_user_choice, final_boss
+from game_user_io import get_user_choice, final_boss
 from game_state_control import check_for_final_boss
 from assets import make_board, make_character
 from dialog import SPACER, ASCENSION_TIME, END
@@ -31,6 +32,7 @@ def game():
     # character = make_character()
     direction = ""
     achieved_goal = False
+    quit_game = False
     playsound("Audio/bgmusic.mp3", block=False)
     for _ in range(3):
         print('Tick')
@@ -47,6 +49,10 @@ def game():
             print(e)
         valid_move = False
 
+        if direction == "Q":
+            quit_game = store_character(character)
+        if quit_game:
+            break
         try:
             valid_move = game_state_control.validate_move(board, character, direction)
         except KeyError as e:
@@ -68,12 +74,13 @@ def game():
             print("It's Caraxes the Python of the Courtyard!!!!")  # TODO: add drama here...
             final_boss(character)
             achieved_goal = True
+            print(END)
         elif not game_state_control.dead_yet(character) and not check_for_final_boss(character):
             print("Our trek continues little one.")
         else:
             print("GAME OVER")
             break
-    print(END)
+
     print("Thanks for playing")
 
 

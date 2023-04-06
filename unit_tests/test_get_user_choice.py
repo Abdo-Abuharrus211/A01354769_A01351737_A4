@@ -2,7 +2,7 @@
 from unittest import TestCase
 from unittest.mock import patch
 
-from user_io import get_user_choice
+from game_user_io import get_user_choice
 
 
 class TestGetUserBoard(TestCase):
