@@ -64,7 +64,7 @@ def game():
             there_is_a_challenger = game_state_control.check_for_foes()
             if there_is_a_challenger:
                 guessing_game(character)
-            game_state_control.level_up(character)
+                game_state_control.level_up(character)
         if character["Knowledge"] == "Master Custodian":
             print(SPACER)
             print(ASCENSION_TIME)
@@ -77,7 +77,7 @@ def game():
         elif not game_state_control.dead_yet(character) and not check_for_final_boss(character):
             print("Our trek continues little one.")
         else:
-            print("GAME OVER")
+            print("GAME OVER! You Perished...")
             break
 
     print("Thanks for playing")
