@@ -62,7 +62,7 @@ def final_boss(character: dict):
                            "deep down, they are \n"
                            "different from everyone else\n"
                            "4: That certain persons simply will not like you, no matter what you do\n"
-                           "That there is such a thing as raw, unalloyed, agendaless kindness \n"
+                           "5: That there is such a thing as raw, unalloyed, agendaless kindness \n"
                            "Choose your answer little one"))
     except ValueError:
         print("You did not chose an answer in range, game over")
