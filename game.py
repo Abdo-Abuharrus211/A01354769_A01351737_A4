@@ -37,7 +37,7 @@ def game():
         time.sleep(1)
         print('Tock')
         time.sleep(1)
-    playsound("Audio/bgmusic.mp3", block=False)
+    playsound.playsound("Audio/bgmusic.mp3", block=False)
     print(dialog.WELCOME_MESSAGE)
     while not achieved_goal:
         print(SPACER)
