@@ -106,7 +106,7 @@ def guessing_game(character: dict):
                              "What is the message of The Pearl (John Steinbeck) "
                              "\n 1: Wealth can be a curse\n 2: Love conquers all\n 3: Once bitten twice shy \n 4: "
                              "Don't put"
-                             "all your eggs in one basket \n 5: ???": 1,
+                             "all your eggs in one basket \n 5: Always be yourself": 1,
                              "Is it ethical to boil lobsters alive according to David Foster Wallace?"
                              "\n 1: Yes \n 2: No": 2,
                              "What is not one of the 12 rules of life, according to Jordan Peterson:"
