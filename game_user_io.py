@@ -54,8 +54,10 @@ def final_boss(character: dict):
     :postcondition: set character HP to 0
     """
     try:
-        answer = int(input("Which of the following, In infinite Jest, is not something you would learn from "
-                           "spending time in a halfway house?\n "
+        answer = int(input("According to David Foster Wallace, in Infinite Jest, if, "
+                           "by the virtue of charity or the circumstances of desperation, you ever chance to spend \n"
+                           "a little time around a Substance-recovery halfway facility, what is an exotic new "
+                           "fact you may NOT aquire? \n "
                            "1: That, perversely, it is often more fun to want something than to have it\n"
                            "2: That you cannot win all of the time \n"
                            "3: That everybody is identical in their secret, unspoken belief that way"
