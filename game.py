@@ -26,8 +26,11 @@ def game():
     columns = 10
     board = make_board(rows, columns)
     # Here we call on the load/new function
-    character = load_char_or_new()
-    # character = make_character()
+    try:
+        character = load_char_or_new()
+    except ValueError as invalid_option:
+        print("Option not available. Please select 1 or 2")
+        character = load_char_or_new()
     direction = ""
     achieved_goal = False
     quit_game = False
