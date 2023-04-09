@@ -8,9 +8,15 @@ def describe_current_location(board: dict, character: dict):
     Describe the room the player is currently in.
 
     :param board: dictionary representing the game board's rooms, with (x,y) coordinates as keys and string values.
-    :param character: dictionary of representing the character and their attributes including X-Coordinate, Y-Coordinate
-            Current HP, Current XP, &  Knowledge
-    :precondition: board and character are dictionaries and not None types
+    :param character: dictionary of representing the character and their attributes with
+                    keys X-Coordinate, Y-Coordinate, Current HP, Current XP, &  Knowledge
+    :precondition board: must be a dictionary with a tuple of integers representing coordinates as keys
+    :precondition board:
+    :precondition character: must be dictionary of representing the character and their attributes with string
+            keys X-Coordinate, Y-Coordinate, Current HP, Current XP, &  Knowledge
+    :precondition character: all dictionary values must be integers except for the one associated with "Knowledge"
+                    which must be a string either "Novice", "Bookworm" or "Master Custodian"
+    :precondition character: must be not none type
     :postcondition: obtains player's current location to acquire room's description from board and prints it
 
     >>> board_one = {(0, 0): "Potato", (0,1): "Pie", (1, 0): "Cheese", (1,1): "Burger"}

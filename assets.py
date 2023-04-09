@@ -68,8 +68,11 @@ def make_description() -> str:
 
 def make_enemy() -> str:
     """
-    Generate random description for enemies.
+    Make enemy description.
 
+    This function generate random description for enemies from a selection of descriptions.
+
+    :precondition: must have a tuple of descriptions
     :postcondition: generate random integer to index through a tuple and obtain an enemy description
     :return: a random string from the collection of strings
     """
