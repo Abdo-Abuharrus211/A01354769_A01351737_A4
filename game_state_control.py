@@ -191,7 +191,7 @@ def check_for_final_boss(character: dict) -> bool:
     Checks for final boss.
 
     This fumnction determines if the player is ready to face the Final Boss based on XP points
-    and, if so, generate random spawn chance of 25%
+    and, if so, generate final boss 40% of the time
 
     :param character: dictionary of representing the character and their attributes including X-Coordinate, Y-Coordinate
             Current HP, Current XP, &  Knowledge
@@ -200,7 +200,7 @@ def check_for_final_boss(character: dict) -> bool:
     :precondition character: all dictionary values must be integers except for the one associated with "Knowledge"
                             which must be a string either "Novice", "Bookworm" or "Master Custodian"
     :postcondition: generates random integer in a specific range then check if it's equal or greater than 25%
-    :return: True if the character will face the final boss (25% of the time) when player's ready,
+    :return: True if the character will face the final boss (40% of the time) when player's ready,
                 return False otherwise
     :raise: KeyError if the character is missing an attribute
     """
