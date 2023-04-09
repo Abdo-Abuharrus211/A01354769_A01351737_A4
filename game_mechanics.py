@@ -11,13 +11,14 @@ def describe_current_location(board: dict, character: dict):
     :param character: dictionary of representing the character and their attributes with
                     keys X-Coordinate, Y-Coordinate, Current HP, Current XP, &  Knowledge
     :precondition board: must be a dictionary with a tuple of integers representing coordinates as keys
-    :precondition board:
+    :precondition board: values must be strings
     :precondition character: must be dictionary of representing the character and their attributes with string
-            keys X-Coordinate, Y-Coordinate, Current HP, Current XP, &  Knowledge
+            keys: X-Coordinate, Y-Coordinate, Current HP, Current XP, &  Knowledge
     :precondition character: all dictionary values must be integers except for the one associated with "Knowledge"
                     which must be a string either "Novice", "Bookworm" or "Master Custodian"
     :precondition character: must be not none type
     :postcondition: obtains player's current location to acquire room's description from board and prints it
+    :raises Keyerror: if the player coordinates passed to the function are out of range
 
     >>> board_one = {(0, 0): "Potato", (0,1): "Pie", (1, 0): "Cheese", (1,1): "Burger"}
     >>> character_one = {"X-coordinate": 1, "Y-coordinate": 1, "Current HP": 5}
@@ -47,13 +48,20 @@ def describe_current_location(board: dict, character: dict):
 
 def move_character(character: dict, direction: str):
     """
-    Update character's current location on the board.
+    Update character's location.
 
-    :param character: ictionary of representing the character and their attributes including X-Coordinate, Y-Coordinate
-            Current HP, Current XP, &  Knowledge
+    This function updates the characters position on the board based on the direction chosen.
+
+    :param character: dictionary of representing the character and their attributes including X-Coordinate, Y-Coordinate
+                        Current HP, Current XP, &  Knowledge
     :param direction: a string for the direction to move the player towards
-    :precondition: character is valid dictionary with character stats, and direction is a string of 'N','E','S', or 'W'
+    :precondition character: must be dictionary of representing the character and their attributes with string
+                            keys: X-Coordinate, Y-Coordinate, Current HP, Current XP, &  Knowledge
+    :precondition character: all dictionary values must be integers except for the one associated with "Knowledge"
+                            which must be a string either "Novice", "Bookworm" or "Master Custodian"
+    :precondition direction: must be a string of 'N','E','S', or 'W'
     :postcondition: updates character's coordinates correctly according to direction the player moves in
+    :raises Valueerror: if the character's position is not within the limits of the board
 
      >>> character_one = {"X-coordinate": 0, "Y-coordinate": 0, "Current HP": 5}
      >>> direction_one = "S"
