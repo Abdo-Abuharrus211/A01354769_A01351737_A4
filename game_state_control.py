@@ -16,9 +16,14 @@ def validate_move(board: dict, character: dict, direction: str) -> bool:
     :param character: dictionary of representing the character and their attributes including X-Coordinate, Y-Coordinate
             Current HP, Current XP, &  Knowledge
     :param direction: a string specifying which direction the player wants to move towards
-    :precondition: character and direction are not None type and direction is a non-empty string
+    :precondition character: must be dictionary of representing the character and their attributes with string
+       keys: X-Coordinate, Y-Coordinate, Current HP, Current XP, &  Knowledge
+    :precondition character: all dictionary values must be integers except for the one associated with "Knowledge"
+               which must be a string either "Novice", "Bookworm" or "Master Custodian"
+    :precondition direction: must be string either "W", "N", "S", or "W"
     :postcondition: Correctly checks if direction is valid and if the move keeps player within bounds
-    :return: True if moving in player's desired direction is still within bounds, return False otherwise
+    :return: True if moving in player's desired direction is still within bounds, False otherwise
+    :raises Keyerror: if the character's current position is not within the board
     :raises KeyError: if moving in a direction leads out of bounds
 
      >>> board_one = {(0, 0): "Potato", (0, 1): "Pie", (1, 0): "Cheese", (1, 1): "Burger"}
