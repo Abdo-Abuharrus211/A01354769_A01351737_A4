@@ -16,8 +16,10 @@ def guessing_game(character: dict):
                     X-Coordinate, Y-Coordinate Current HP, Current XP, &  Knowledge
     :precondition character: all dictionary values except for Knowledge must be integers
     :precondition: character Knowledge must either be 'Novice', 'Bookworm, or 'Master Custodian'
-    :postcondition: update to character dictionary if appropriate
+    :postcondition: update to character XP if appropriate (correct answer)
+    :postcondition: update to character HP if appropriate (incorrect answer)
     :postcondition: prints the appropriate follow-up message to the player
+    :raises ValueError: if the player does not enter an integer
     """
 
     def get_question(inner_character: dict):
@@ -25,7 +27,8 @@ def guessing_game(character: dict):
         Get the question and answer for enemy quiz
 
         This function will retrieve a random question and correct answer from the appropriate
-         dictionary based on character Level
+        dictionary based on character Level
+
         :param inner_character: dictionary of representing the character and their attributes including X-Coordinate,
                                 Y-Coordinate Current HP, Current XP, &  Knowledge
         :precondition: must be dictionary of representing the character and their attributes including X-Coordinate,

@@ -12,7 +12,6 @@ def make_description() -> str:
 
     This function generates a random description randomly from a tuple of descriptions.
 
-    :precondition: must have a tuple of room descriptions
     :postcondition: generate random integer to index through a tuple and obtain a room description
     :return: a random string from the collection of strings
     """

@@ -13,10 +13,12 @@ from game_state_control import damage_received
 
 def get_user_choice() -> str:
     """
-    Asks the player which direction they want to move towards.
+    Gets user direction choice.
+
+    This function asks the player which direction they want to move towards.
 
     :precondition: player must only enter 'N','E','S', or 'W' directions when prompted or 'Q' to quit game
-    :postcondition: receives player's input and assigns it to a variable, and raises error if player misbehaves
+    :postcondition: receives player's input and assigns it to a variable
     :return: a string for the direction the player wishes to move towards
     :raises ValueError: if player enters anything besides 'N','E','S', 'W'  or 'Q'
     """
@@ -52,6 +54,7 @@ def final_boss(character: dict):
     :precondition character: all dictionary values must be integers except for Knowledge values must be a String
     :postcondition: prints appropriate message
     :postcondition: set character HP to 0
+    :raises ValueError: if the player does not choose an input of the given options
     """
     try:
         answer = int(input("According to David Foster Wallace, in Infinite Jest, if, "
