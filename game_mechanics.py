@@ -18,7 +18,7 @@ def describe_current_location(board: dict, character: dict):
                     which must be a string either "Novice", "Bookworm" or "Master Custodian"
     :precondition character: must be not none type
     :postcondition: obtains player's current location to acquire room's description from board and prints it
-    :raises Keyerror: if the player coordinates passed to the function are out of range
+    :raise: KeyError if the character is missing a required attribute
 
     >>> board_one = {(0, 0): "Potato", (0,1): "Pie", (1, 0): "Cheese", (1,1): "Burger"}
     >>> character_one = {"X-coordinate": 1, "Y-coordinate": 1, "Current HP": 5}
@@ -61,7 +61,7 @@ def move_character(character: dict, direction: str):
                             which must be a string either "Novice", "Bookworm" or "Master Custodian"
     :precondition direction: must be a string of 'N','E','S', or 'W'
     :postcondition: updates character's coordinates correctly according to direction the player moves in
-    :raises Valueerror: if the character's position is not within the limits of the board
+    :raise: KeyError if the character is missing a required attribute
 
      >>> character_one = {"X-coordinate": 0, "Y-coordinate": 0, "Current HP": 5}
      >>> direction_one = "S"

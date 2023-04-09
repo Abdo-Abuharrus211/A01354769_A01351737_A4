@@ -23,7 +23,7 @@ def validate_move(board: dict, character: dict, direction: str) -> bool:
     :precondition direction: must be string either "W", "N", "S", or "W"
     :postcondition: Correctly checks if direction is valid and if the move keeps player within bounds
     :return: True if moving in player's desired direction is still within bounds, False otherwise
-    :raises Keyerror: if the character's current position is not within the board
+    :raise: KeyError if the character is missing a required attribute
     :raises KeyError: if moving in a direction leads out of bounds
 
      >>> board_one = {(0, 0): "Potato", (0, 1): "Pie", (1, 0): "Cheese", (1, 1): "Burger"}
@@ -63,12 +63,12 @@ def validate_move(board: dict, character: dict, direction: str) -> bool:
 
 def check_for_foes() -> bool:
     """
-    Determine if there is a chance of encountering  foe.
+    Check for foes.
 
-    This function Determines if there's a 33.33% chance to face and fight a foe to fight by generating a random integer.
+    This function determines if the character will face and fight by generating a random integer.
 
-    :postcondition: generates random integer in a specific range then check if it's equal or greater than 33.33%
-    :return: True if a foe is encountered, return False otherwise
+    :postcondition: generates random integer in range 1 to 6 and checks if that number is less than or equal to 2
+    :return: True if a foe is encountered (1/3 of the time), return False otherwise
     """
     return random.randint(1, 6) <= 2
 
@@ -79,11 +79,14 @@ def dead_yet(character: dict) -> dict:
 
     :param character: dictionary of representing the character and their attributes including X-Coordinate, Y-Coordinate
             Current HP, Current XP, &  Knowledge
-    :precondition: dictionary of representing the character and their attributes including X-Coordinate, Y-Coordinate
-            Current HP, Current XP, &  Knowledge
+   :precondition board: must be a dictionary with a tuple of integers representing coordinates as keys
+    :precondition character: must be dictionary of representing the character and their attributes with string
+                            keys: X-Coordinate, Y-Coordinate, Current HP, Current XP, &  Knowledge
+    :precondition character: all dictionary values must be integers except for the one associated with "Knowledge"
+                             which must be a string either "Novice", "Bookworm" or "Master Custodian"
     :postcondition: checks if character's HP is zero (dead) or if they're alive
     :return: True if the character's is dead, return False otherwise
-    :raise: KeyError if the character is missing an attribute
+    :raise: KeyError if the character is missing a required attribute
      >>> character_one = {"X-coordinate": 0, "Y-coordinate": 0, "Current HP": 7, "Current XP": 10, "Knowledge": "Novice"}
      >>> dead_yet(character_one)
      False
@@ -104,15 +107,18 @@ def dead_yet(character: dict) -> dict:
 
 def damage_received(character):
     """
-    Adjust damage received based on character's level to imitate increasing character resistance.
+    Adjust damage received.
 
-    A function that adjusts the amount of damage inflicted when attacked to mirror character resistance gains
+    This function adjusts the amount of damage inflicted when attacked to mirror character resistance gains
+
     :param character: dictionary of representing the character and their attributes including X-Coordinate, Y-Coordinate
             Current HP, Current XP, &  Knowledge
-    :precondition: character must be dictionary of representing the character and their attributes including
-    X-Coordinate, Y-Coordinate Current HP, Current XP, &  Knowledge
-    :return: the appropriate amount of damage inflicted
-    :raise: KeyError if the character is missing an attribute
+    :precondition character: must be dictionary of representing the character and their attributes with string
+                            keys: X-Coordinate, Y-Coordinate, Current HP, Current XP, &  Knowledge
+    :precondition character: all dictionary values must be integers except for the one associated with "Knowledge"
+                         which must be a string either "Novice", "Bookworm" or "Master Custodian"
+    :return: the appropriate amount of damage inflicted as in integer
+    :raises KeyError: if the character is missing an attribute
     >>> bob = {"X-coordinate": 0, "Y-coordinate": 0, "Current HP": 7, "Current XP": 10, "Knowledge": "Novice"}
     >>> damage_received(bob)
     10
@@ -136,15 +142,18 @@ def damage_received(character):
 
 def level_up(character: dict):
     """
-    Increase the character's knowledge level if they reach the level up threshold.
+    Increase the character's level.
 
-    a function that increases the character knowledge level based on experience points
+    This function increases the character knowledge level if they have the threashhold number of experience points
 
     :param character: dictionary representing player's character stats, current location,current HP,
                         current XP and Knowledge
-    :precondition character: must be a dictionary of character attributes
-                             containing string keys X-coordinate, Y-coordinate, current HP, current XP and Knowledge
+    :precondition character: must be dictionary of representing the character and their attributes with string
+                            keys: X-Coordinate, Y-Coordinate, Current HP, Current XP, &  Knowledge
+    :precondition character: all dictionary values must be integers except for the one associated with "Knowledge"
+                            which must be a string either "Novice", "Bookworm" or "Master Custodian"
     :postcondition: update Knowledge if appropriate based on current XP
+    :postocondition: print appropriate congratulatory message
     :raise: KeyError if the character is missing an attribute
     >>> bob={"X-coordinate": 0, "Y-coordinate": 0, "Current HP": 7, "Current XP": 10, "Knowledge": "Novice"}
     >>> level_up(bob)
@@ -179,14 +188,20 @@ def level_up(character: dict):
 
 def check_for_final_boss(character: dict) -> bool:
     """
-    Determine if the player is ready to face the Final Boss and generate random spawn chance.
+    Checks for final boss.
+
+    This fumnction determines if the player is ready to face the Final Boss based on XP points
+    and, if so, generate random spawn chance of 25%
 
     :param character: dictionary of representing the character and their attributes including X-Coordinate, Y-Coordinate
             Current HP, Current XP, &  Knowledge
-    :precondition: character dictionary of representing the character and their attributes including X-Coordinate,
-                    Y-Coordinate Current HP, Current XP, &  Knowledge
+    :precondition character: must be dictionary of representing the character and their attributes with string
+                            keys: X-Coordinate, Y-Coordinate, Current HP, Current XP, &  Knowledge
+    :precondition character: all dictionary values must be integers except for the one associated with "Knowledge"
+                            which must be a string either "Novice", "Bookworm" or "Master Custodian"
     :postcondition: generates random integer in a specific range then check if it's equal or greater than 25%
-    :return: True if there's a 20% or more chance of facing the final boss when player's ready, return False otherwise
+    :return: True if the character will face the final boss (25% of the time) when player's ready,
+                return False otherwise
     :raise: KeyError if the character is missing an attribute
     """
     stat_list = ['X-coordinate', 'Y-coordinate', 'Current HP', 'Current XP', 'Knowledge']
