@@ -182,7 +182,7 @@ def level_up(character: dict):
         print(SPACER)
     elif 200 <= character["Current XP"] < 300:
         character["Knowledge"] = "Master Custodian"
-        print("The pupil has become a master. You're a Master Custodian now! You're ready to ascend.")
+        print(f"The pupil has become a master. You're a Master Custodian now! You're ready to ascend.")
         print(SPACER)
 
 

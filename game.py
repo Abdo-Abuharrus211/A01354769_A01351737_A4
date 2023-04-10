@@ -29,7 +29,7 @@ def game():
     try:
         character = load_char_or_new()
     except ValueError as invalid_option:
-        print("Option not available. Please select 1 or 2")
+        print(f"Option not available. Please select 1 or 2")
         character = load_char_or_new()
     direction = ""
     achieved_goal = False
@@ -73,17 +73,17 @@ def game():
             print(ASCENSION_TIME)
             print(SPACER)
         if not game_state_control.dead_yet(character) and check_for_final_boss(character):
-            print("It's Caraxes the Python of the Courtyard!!!!")  # TODO: add drama here...
+            print(f"It's Caraxes the Python of the Courtyard!!!!")  # TODO: add drama here...
             final_boss(character)
             achieved_goal = True
             print(END)
         elif not game_state_control.dead_yet(character) and not check_for_final_boss(character):
-            print("Our trek continues little one.")
+            print(f"Our trek continues little one.")
         else:
-            print("GAME OVER! You Perished...")
+            print(f"GAME OVER! You Perished...")
             break
 
-    print("Thanks for playing")
+    print(f"Thanks for playing")
 
 
 def main():

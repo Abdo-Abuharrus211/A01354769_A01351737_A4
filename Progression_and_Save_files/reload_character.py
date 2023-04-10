@@ -26,10 +26,10 @@ def save_character(character: dict):
             filename = 'Progression_and_Save_files/saved_character.json'
             with open(filename, 'w') as file_object:
                 json.dump(character, file_object)
-            print("your game was saved")
+            print(f"your game was saved")
             return True
         else:
-            print("Please select Y or N")
+            print(f"Please select Y or N")
     else:
         return False
 

@@ -142,15 +142,15 @@ def guessing_game(character: dict):
     try:
         answer = int(input("Choose your answer little one: "))
     except ValueError:
-        print("'Please pick a number between 1 and 5 inclusive, you lost 1 HP'")
+        print(f"'Please pick a number between 1 and 5 inclusive, you lost 1 HP'")
         character["Current HP"] -= damage_received(character)
     else:
         if answer < 1 or answer > 5:
-            print("'You must pick a number between 1 and 5 inclusive, you lost 1 HP'")
+            print(f"'You must pick a number between 1 and 5 inclusive, you lost 1 HP'")
             character["Current HP"] -= damage_received(character)
         elif answer == actual_answer:
             character["Current XP"] += 20
-            print("You may pass unharmed")
+            print(f"You may pass unharmed")
         elif answer != actual_answer:
-            print("'Incorrect, 1 hit taken'")
+            print(f"'Incorrect, 1 hit taken'")
             character["Current HP"] -= damage_received(character)

@@ -70,16 +70,16 @@ def final_boss(character: dict):
                            "5: That there is such a thing as raw, unalloyed, agendaless kindness \n"
                            "Choose your answer little one"))
     except ValueError:
-        print("You did not chose an answer in range, game over")
+        print(f"You did not chose an answer in range, game over")
         character["Current HP"] = 0
     else:
         if answer < 1 or answer > 5:
-            print("You did not chose an answer in range, game over")
+            print(f"You did not chose an answer in range, game over")
             character["Current HP"] = 0
         elif answer == 2:
-            print("Congratulations, you won!")
+            print(f"Congratulations, you won!")
         elif answer != 2:
-            print("Incorrect, Caraxes has constricted the light out of you...I'm sorry little one")
+            print(f"Incorrect, Caraxes has constricted the light out of you...I'm sorry little one")
             character["Current HP"] = 0
 
 
